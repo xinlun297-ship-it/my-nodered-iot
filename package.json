@@ -5,7 +5,7 @@
   "dependencies": {
     "node-red": "latest",
     "node-red-dashboard": "latest",
-    "node-red-contrib-ui-table": "latest",
+    "node-red-node-ui-table": "latest",
     "node-red-node-firebase": "latest"
   },
   "engines": {
