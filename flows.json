@@ -1,0 +1,1271 @@
+[
+    {
+        "id": "f6f2187d.f17ca8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d78a1cc5aea2f3ae",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "fbd85a30f492fd45",
+        "type": "tab",
+        "label": "Flow 3",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "7a2ff255f92b14c8",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "broker.emqx.io",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "1d754faa898b190d",
+        "type": "firebase-config",
+        "name": "My Database",
+        "authType": "email",
+        "claims": {},
+        "createUser": false,
+        "status": {
+            "firestore": false,
+            "storage": false
+        },
+        "useClaims": false
+    },
+    {
+        "id": "5f166602f9f0dfe3",
+        "type": "ui_tab",
+        "name": "Home",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "edfd14a3bac6ed2b",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "activity_log_group",
+        "type": "ui_group",
+        "name": "Activity Log",
+        "tab": "5f166602f9f0dfe3",
+        "order": 4,
+        "disp": true,
+        "width": "12"
+    },
+    {
+        "id": "b3bf710b67ec3bc9",
+        "type": "ui_group",
+        "name": "Safety Info",
+        "tab": "5f166602f9f0dfe3",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "63f796d318b5ca89",
+        "type": "ui_group",
+        "name": "System Control",
+        "tab": "5f166602f9f0dfe3",
+        "order": 3,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f546be7135824c6",
+        "type": "ui_group",
+        "name": "Parking Status",
+        "tab": "5f166602f9f0dfe3",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "65a5106241318d93",
+        "type": "link in",
+        "z": "f6f2187d.f17ca8",
+        "name": "To_Firebase_S1",
+        "links": [
+            "9c249e1f703a7ff4"
+        ],
+        "x": 305,
+        "y": 120,
+        "wires": [
+            [
+                "956baa758ff6ea88"
+            ]
+        ]
+    },
+    {
+        "id": "e4c0756ae099b117",
+        "type": "link in",
+        "z": "f6f2187d.f17ca8",
+        "name": "To_Firebase_S2",
+        "links": [
+            "2b732069f5723a18"
+        ],
+        "x": 285,
+        "y": 240,
+        "wires": [
+            [
+                "53c89e5dadfc77eb"
+            ]
+        ]
+    },
+    {
+        "id": "228e56200a2d126c",
+        "type": "link in",
+        "z": "f6f2187d.f17ca8",
+        "name": "To_Firebase_S3",
+        "links": [
+            "d2f8960d823cc35d"
+        ],
+        "x": 275,
+        "y": 340,
+        "wires": [
+            [
+                "ec3c53a069a1a827"
+            ]
+        ]
+    },
+    {
+        "id": "2bdb9085b2ec4a1b",
+        "type": "link in",
+        "z": "f6f2187d.f17ca8",
+        "name": "To_UI_Smoke",
+        "links": [
+            "a7b69fab224162e8"
+        ],
+        "x": 275,
+        "y": 440,
+        "wires": [
+            [
+                "6662a5ea6db1928b"
+            ]
+        ]
+    },
+    {
+        "id": "f41a9b0ce3f9491c",
+        "type": "link in",
+        "z": "f6f2187d.f17ca8",
+        "name": "To_UI_Alarm",
+        "links": [
+            "edd5826c8f0b7cef"
+        ],
+        "x": 275,
+        "y": 500,
+        "wires": [
+            [
+                "5146f6abc4bffc5b"
+            ]
+        ]
+    },
+    {
+        "id": "124fb20a780c7223",
+        "type": "link in",
+        "z": "f6f2187d.f17ca8",
+        "name": "Firebase_Log_Receiver",
+        "links": [
+            "4fc6a1f5c991df8c"
+        ],
+        "x": 275,
+        "y": 600,
+        "wires": [
+            [
+                "bb2c537480eddd5b"
+            ]
+        ]
+    },
+    {
+        "id": "956baa758ff6ea88",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "1d754faa898b190d",
+        "path": "SmartParking/Slot1",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "set",
+        "x": 540,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "53c89e5dadfc77eb",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "1d754faa898b190d",
+        "path": "SmartParking/Slot2",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "set",
+        "x": 540,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "ec3c53a069a1a827",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "1d754faa898b190d",
+        "path": "SmartParking/Slot3",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "set",
+        "x": 540,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "6662a5ea6db1928b",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "1d754faa898b190d",
+        "path": "SmartParking/SmokeLevel",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "set",
+        "x": 560,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "5146f6abc4bffc5b",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "1d754faa898b190d",
+        "path": "SmartParking/AlarmStatus",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "set",
+        "x": 560,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "bb2c537480eddd5b",
+        "type": "firebase-out",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "database": "1d754faa898b190d",
+        "path": "SmartParking/ActivityLogs",
+        "pathType": "str",
+        "priority": "1",
+        "queryType": "push",
+        "x": 570,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "b244b4141a70150c",
+        "type": "mqtt in",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/slot/1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "7a2ff255f92b14c8",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "9c249e1f703a7ff4"
+            ]
+        ]
+    },
+    {
+        "id": "94705dbf8cb08792",
+        "type": "mqtt in",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/slot/2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "7a2ff255f92b14c8",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 200,
+        "wires": [
+            [
+                "2b732069f5723a18"
+            ]
+        ]
+    },
+    {
+        "id": "8cd6865e94bc9d53",
+        "type": "mqtt in",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/slot/3",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "7a2ff255f92b14c8",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 310,
+        "y": 300,
+        "wires": [
+            [
+                "d2f8960d823cc35d"
+            ]
+        ]
+    },
+    {
+        "id": "9c249e1f703a7ff4",
+        "type": "link out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "To_Firebase_S1 / To_UI_S1",
+        "mode": "link",
+        "links": [
+            "65a5106241318d93",
+            "0d98a7b524fb4a3e",
+            "5a91f128fb069999"
+        ],
+        "x": 555,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "2b732069f5723a18",
+        "type": "link out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "To_Firebase_S2 / To_UI_S2",
+        "mode": "link",
+        "links": [
+            "e4c0756ae099b117",
+            "3007d99697c011c6",
+            "5a91f128fb069999"
+        ],
+        "x": 555,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "d2f8960d823cc35d",
+        "type": "link out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "To_Firebase_S3 / To_UI_S3",
+        "mode": "link",
+        "links": [
+            "228e56200a2d126c",
+            "c156fdd606f3f538",
+            "5a91f128fb069999"
+        ],
+        "x": 555,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "0e6bd4b75223afe8",
+        "type": "mqtt in",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/available",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "7a2ff255f92b14c8",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 240,
+        "y": 420,
+        "wires": [
+            [
+                "4ee96eb4c1f477d6",
+                "1ae7f6fac2c32b45"
+            ]
+        ]
+    },
+    {
+        "id": "4ee96eb4c1f477d6",
+        "type": "link out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "To_UI_Available",
+        "mode": "link",
+        "links": [
+            "2492a0d48e4971b2"
+        ],
+        "x": 515,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "0edc95fed4810b35",
+        "type": "mqtt in",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/smoke/value",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "7a2ff255f92b14c8",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 540,
+        "wires": [
+            [
+                "a7b69fab224162e8"
+            ]
+        ]
+    },
+    {
+        "id": "a7b69fab224162e8",
+        "type": "link out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "To_UI_Smoke",
+        "mode": "link",
+        "links": [
+            "2bdb9085b2ec4a1b",
+            "2d855b955afabeb7",
+            "5a91f128fb069999"
+        ],
+        "x": 515,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "9a506718442452cc",
+        "type": "mqtt in",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/alarm/status",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "7a2ff255f92b14c8",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 620,
+        "wires": [
+            [
+                "edd5826c8f0b7cef"
+            ]
+        ]
+    },
+    {
+        "id": "edd5826c8f0b7cef",
+        "type": "link out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "To_UI_Alarm",
+        "mode": "link",
+        "links": [
+            "f41a9b0ce3f9491c",
+            "d74203f50d3ea595"
+        ],
+        "x": 485,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "c708d51d93b2080d",
+        "type": "mqtt out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/buzzer/control",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "7a2ff255f92b14c8",
+        "x": 460,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "8aeb41697625fafe",
+        "type": "link in",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "From_UI_Buzzer",
+        "links": [
+            "95d719a5695850b0"
+        ],
+        "x": 155,
+        "y": 680,
+        "wires": [
+            [
+                "c708d51d93b2080d"
+            ]
+        ]
+    },
+    {
+        "id": "31ce6dca4df714d5",
+        "type": "mqtt out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/gate/control",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "7a2ff255f92b14c8",
+        "x": 470,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "e07ccade121b707d",
+        "type": "link in",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "From_UI_Switch",
+        "links": [
+            "4edcee16fcf5be92"
+        ],
+        "x": 135,
+        "y": 760,
+        "wires": [
+            [
+                "31ce6dca4df714d5"
+            ]
+        ]
+    },
+    {
+        "id": "1ae7f6fac2c32b45",
+        "type": "mqtt out",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "topic": "parking/available",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "7a2ff255f92b14c8",
+        "x": 490,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "0d98a7b524fb4a3e",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 2",
+        "links": [
+            "9c249e1f703a7ff4"
+        ],
+        "x": 255,
+        "y": 60,
+        "wires": [
+            [
+                "816566ca8ed6c04f"
+            ]
+        ]
+    },
+    {
+        "id": "3007d99697c011c6",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 3",
+        "links": [
+            "2b732069f5723a18"
+        ],
+        "x": 305,
+        "y": 160,
+        "wires": [
+            [
+                "8aae30d68c90752d"
+            ]
+        ]
+    },
+    {
+        "id": "c156fdd606f3f538",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 4",
+        "links": [
+            "d2f8960d823cc35d"
+        ],
+        "x": 295,
+        "y": 280,
+        "wires": [
+            [
+                "782c6451a100674e"
+            ]
+        ]
+    },
+    {
+        "id": "816566ca8ed6c04f",
+        "type": "function",
+        "z": "fbd85a30f492fd45",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 390,
+        "y": 60,
+        "wires": [
+            [
+                "33cfb54fbb7467b6"
+            ]
+        ]
+    },
+    {
+        "id": "8aae30d68c90752d",
+        "type": "function",
+        "z": "fbd85a30f492fd45",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 160,
+        "wires": [
+            [
+                "9302f87c42eb210f"
+            ]
+        ]
+    },
+    {
+        "id": "782c6451a100674e",
+        "type": "function",
+        "z": "fbd85a30f492fd45",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 280,
+        "wires": [
+            [
+                "8645b2023d745d7e"
+            ]
+        ]
+    },
+    {
+        "id": "2492a0d48e4971b2",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 7",
+        "links": [
+            "4ee96eb4c1f477d6"
+        ],
+        "x": 295,
+        "y": 400,
+        "wires": [
+            [
+                "1a55bfc6afb46e74"
+            ]
+        ]
+    },
+    {
+        "id": "00df4b88e60dc476",
+        "type": "function",
+        "z": "fbd85a30f492fd45",
+        "name": "function 1",
+        "func": "let reason = msg.payload.toString().trim().toLowerCase();\n\nif (reason === \"clear\") {\n    msg.color = \"#27ae60\";\n    msg.text = \"SYSTEM SECURE\";\n    msg.icon = \"fa fa-shield fa-2x\"; \n} else if (reason === \"smoke\") {\n    msg.color = \"#c0392b\"; \n    msg.text = \"FIRE: SMOKE DETECTED\";\n    msg.icon = \"fa fa-fire fa-2x\"; \n} else if (reason === \"panic\") {\n    msg.color = \"#8e44ad\"; \n    msg.text = \"EMERGENCY: PANIC BUTTON\";\n    msg.icon = \"fa fa-exclamation-triangle fa-2x\"; \n} else {\n    msg.color = \"#f39c12\"; \n    msg.text = \"ALERT: \" + reason.toUpperCase();\n    msg.icon = \"fa fa-warning fa-2x\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 990,
+        "y": 300,
+        "wires": [
+            [
+                "cff27ab6e6deee07"
+            ]
+        ]
+    },
+    {
+        "id": "2d855b955afabeb7",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 8",
+        "links": [
+            "a7b69fab224162e8"
+        ],
+        "x": 805,
+        "y": 180,
+        "wires": [
+            [
+                "910969a2ac8a003f",
+                "b7f5b8516fb827c2"
+            ]
+        ]
+    },
+    {
+        "id": "d74203f50d3ea595",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 9",
+        "links": [
+            "edd5826c8f0b7cef"
+        ],
+        "x": 785,
+        "y": 300,
+        "wires": [
+            [
+                "00df4b88e60dc476"
+            ]
+        ]
+    },
+    {
+        "id": "95d719a5695850b0",
+        "type": "link out",
+        "z": "fbd85a30f492fd45",
+        "name": "To_Input_StopBuzz",
+        "mode": "link",
+        "links": [
+            "5a91f128fb069999",
+            "8aeb41697625fafe"
+        ],
+        "x": 545,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "4edcee16fcf5be92",
+        "type": "link out",
+        "z": "fbd85a30f492fd45",
+        "name": "link out 1",
+        "mode": "link",
+        "links": [
+            "5a91f128fb069999",
+            "e07ccade121b707d"
+        ],
+        "x": 535,
+        "y": 680,
+        "wires": []
+    },
+    {
+        "id": "5a91f128fb069999",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "Global_Event_Logger",
+        "links": [
+            "9c249e1f703a7ff4",
+            "2b732069f5723a18",
+            "d2f8960d823cc35d",
+            "a7b69fab224162e8",
+            "95d719a5695850b0",
+            "4edcee16fcf5be92"
+        ],
+        "x": 715,
+        "y": 600,
+        "wires": [
+            [
+                "new_logger_function"
+            ]
+        ]
+    },
+    {
+        "id": "new_logger_function",
+        "type": "function",
+        "z": "fbd85a30f492fd45",
+        "name": "Smart Time Logger",
+        "func": "// 1. Get Malaysia time and timestamp\nconst timeSettings = { timeZone: 'Asia/Kuala_Lumpur', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };\nconst currentTime = new Date().toLocaleTimeString(\"en-GB\", timeSettings);\nconst currentTimestamp = Date.now(); // Used to calculate parking duration\n\nlet deviceName = msg.topic || \"Unknown\";\nlet payloadStr = (msg.payload != null) ? msg.payload.toString().trim() : \"\";\nlet actionStatus = \"\";\nlet remark = \"Live Update\"; // Default remark\n\n// 2. Core Logic (Added HTML Color Codes) --------------------------------\nif (msg.topic.includes(\"parking/slot/\")) {\n    let slotNum = msg.topic.slice(-1); // Extract slot number\n    deviceName = \"Parking Slot \" + slotNum;\n\n    if (payloadStr === \"1\" || payloadStr === \"Occupied\") {\n        actionStatus = \"<span style='color:#3498db; font-weight:bold;'>🚗 Vehicle Arrived</span>\";\n        // Store arrival time\n        flow.set(\"slot\" + slotNum + \"_arrive\", currentTimestamp);\n    }\n    else if (payloadStr === \"0\" || payloadStr === \"Empty\") {\n        actionStatus = \"<span style='color:#2ecc71; font-weight:bold;'>🔓 Slot Empty</span>\";\n        let arriveTime = flow.get(\"slot\" + slotNum + \"_arrive\");\n        if (arriveTime) {\n            let durationMs = currentTimestamp - arriveTime;\n            let durationMins = Math.floor(durationMs / 60000);\n            let durationSecs = Math.floor((durationMs % 60000) / 1000);\n\n            // 🌟 Fully English formatted string with styling\n            remark = `<span style='background-color:#e8f4f8; color:#2980b9; padding:2px 6px; border-radius:4px; font-weight:bold; border:1px solid #bdc3c7;'>⏱️ Parked: ${durationMins}m ${durationSecs}s</span>`;\n\n            flow.set(\"slot\" + slotNum + \"_arrive\", null); // Clear arrival time\n        }\n    }\n}\nelse if (msg.topic === \"parking/smoke/value\") {\n    deviceName = \"Smoke Detector\";\n    if (payloadStr === \"smoke\") actionStatus = \"<span style='color:red; font-weight:bold; font-size:14px;'>🔥 FIRE DETECTED</span>\";\n    else if (payloadStr === \"clear\") actionStatus = \"<span style='color:#27ae60;'>✅ Smoke Cleared</span>\";\n}\nelse if (msg.topic === \"parking/alarm/status\") {\n    deviceName = \"Emergency System\";\n    if (payloadStr === \"panic\") actionStatus = \"<span style='color:#8e44ad; font-weight:bold;'>🚨 PANIC BUTTON PRESSED</span>\";\n    else if (payloadStr === \"clear\") actionStatus = \"<span style='color:#27ae60;'>✅ Alarm Reset by Admin</span>\";\n}\nelse if (msg.topic === \"parking/buzzer/control\") {\n    deviceName = \"Admin Console\";\n    if (payloadStr === \"OFF\") actionStatus = \"<span style='color:#e67e22;'>🔕 Buzzer Muted</span>\";\n}\nelse if (msg.topic === \"parking/gate/control\") {\n    deviceName = \"Admin Console\";\n    if (payloadStr === \"OPEN\") actionStatus = \"<span style='color:#f39c12; font-weight:bold;'>🚧 Gate Opened</span>\";\n    else if (payloadStr === \"CLOSE\") actionStatus = \"<span style='color:#7f8c8d; font-weight:bold;'>🚧 Gate Closed</span>\";\n}\n\n// Filter out irrelevant noise/messages\nif (actionStatus === \"\") return null;\n\n// 3. Generate data for Table UI (with HTML colors)\nconst newLogEntry = {\n    \"Time\": currentTime,\n    \"Device\": deviceName,\n    \"Status\": actionStatus,\n    \"Remark\": remark\n};\n\nlet eventHistory = flow.get(\"eventLogs\") || [];\neventHistory.unshift(newLogEntry);\nif (eventHistory.length > 20) eventHistory.pop(); // Keep top 20 records\nflow.set(\"eventLogs\", eventHistory);\n\n// 4. Generate data for Firebase (Strip HTML tags to keep database clean)\nlet cleanStatus = actionStatus.replace(/<[^>]*>?/gm, '');\nlet cleanRemark = remark.replace(/<[^>]*>?/gm, ''); // 🌟 Clean the remark too\n\nconst firebaseEntry = {\n    \"Time\": currentTime,\n    \"Device\": deviceName,\n    \"Status\": cleanStatus,\n    \"Remark\": cleanRemark\n};\n\n// Output 1 (msg1) goes to UI Table, Output 2 (msg2) goes to Firebase\nlet msg1 = { payload: JSON.parse(JSON.stringify(eventHistory)) };\nlet msg2 = { payload: firebaseEntry };\n\nreturn [msg1, msg2];",
+        "outputs": 2,
+        "timeout": "",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 900,
+        "y": 600,
+        "wires": [
+            [
+                "f61cea607c804fda"
+            ],
+            [
+                "4fc6a1f5c991df8c"
+            ]
+        ]
+    },
+    {
+        "id": "4fc6a1f5c991df8c",
+        "type": "link out",
+        "z": "fbd85a30f492fd45",
+        "name": "To_Firebase_ActivityLog",
+        "mode": "link",
+        "links": [
+            "124fb20a780c7223"
+        ],
+        "x": 1045,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "f61cea607c804fda",
+        "type": "ui_table",
+        "z": "fbd85a30f492fd45",
+        "group": "activity_log_group",
+        "name": "Activity Log Table",
+        "order": 1,
+        "width": "12",
+        "height": "6",
+        "columns": [
+            {
+                "field": "Time",
+                "title": "Time",
+                "width": "20%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Device",
+                "title": "Device",
+                "width": "30%",
+                "align": "left",
+                "formatter": "plaintext",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Status",
+                "title": "Status",
+                "width": "25%",
+                "align": "left",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            },
+            {
+                "field": "Remark",
+                "title": "Remark",
+                "width": "25%",
+                "align": "left",
+                "formatter": "html",
+                "formatterParams": {
+                    "target": "_blank"
+                }
+            }
+        ],
+        "outputs": 0,
+        "cts": false,
+        "x": 1135,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "22b61b9bbd324cb4",
+        "type": "ui_switch",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "label": "Admin Gate Control",
+        "tooltip": "",
+        "group": "63f796d318b5ca89",
+        "order": 1,
+        "width": "6",
+        "height": "2",
+        "passthru": true,
+        "decouple": "false",
+        "topic": "parking/gate/control",
+        "topicType": "str",
+        "style": "",
+        "onvalue": "OPEN",
+        "onvalueType": "str",
+        "onicon": "fa fa-car",
+        "oncolor": "",
+        "offvalue": "CLOSE",
+        "offvalueType": "str",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "className": "",
+        "x": 340,
+        "y": 680,
+        "wires": [
+            [
+                "4edcee16fcf5be92"
+            ]
+        ]
+    },
+    {
+        "id": "910969a2ac8a003f",
+        "type": "ui_chart",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "group": "b3bf710b67ec3bc9",
+        "order": 3,
+        "width": "6",
+        "height": "5",
+        "label": "Smoke Trend (Past 5 Mins)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "4095",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 1050,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "5483220331da9dad",
+        "type": "ui_button",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "group": "63f796d318b5ca89",
+        "order": 0,
+        "width": "6",
+        "height": "2",
+        "passthru": false,
+        "label": "   MUTE ALARM",
+        "tooltip": "",
+        "color": "#ffffff",
+        "bgcolor": "#c0392b",
+        "className": "",
+        "icon": "fa-bell-slash",
+        "payload": "OFF",
+        "payloadType": "str",
+        "topic": "parking/buzzer/control",
+        "topicType": "str",
+        "x": 350,
+        "y": 600,
+        "wires": [
+            [
+                "95d719a5695850b0"
+            ]
+        ]
+    },
+    {
+        "id": "b7f5b8516fb827c2",
+        "type": "ui_gauge",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "group": "b3bf710b67ec3bc9",
+        "order": 1,
+        "width": "6",
+        "height": "4",
+        "gtype": "gage",
+        "title": "Smoke Level",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4095",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1020,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1a55bfc6afb46e74",
+        "type": "ui_gauge",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "group": "6f546be7135824c6",
+        "order": 3,
+        "width": "12",
+        "height": "6",
+        "gtype": "gage",
+        "title": "Available Slots",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "3",
+        "colors": [
+            "#ff0000",
+            "#e6e600",
+            "#00ff40"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 500,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "cff27ab6e6deee07",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "b3bf710b67ec3bc9",
+        "name": "",
+        "order": 2,
+        "width": "6",
+        "height": "2",
+        "format": "<div ng-style=\"{'background-color': msg.color}\"\n    style=\"width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 8px; color: white; font-family: 'Arial Black', sans-serif; overflow: hidden; margin: 0; padding: 5px;\">\n\n    <i class=\"{{msg.icon}}\" style=\"font-size: 24px; margin-bottom: 4px;\"></i>\n    <div style=\"font-size: 16px; font-weight: bold; text-align: center; line-height: 1.1;\">\n        {{msg.text}}\n    </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1190,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "8645b2023d745d7e",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "6f546be7135824c6",
+        "name": "Slot 3",
+        "order": 3,
+        "width": "4",
+        "height": "5",
+        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 3</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 570,
+        "y": 280,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9302f87c42eb210f",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "6f546be7135824c6",
+        "name": "Slot 2",
+        "order": 2,
+        "width": "4",
+        "height": "5",
+        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 2</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 550,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "33cfb54fbb7467b6",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "6f546be7135824c6",
+        "name": "Slot 1",
+        "order": 1,
+        "width": "4",
+        "height": "5",
+        "format": "<div ng-style=\"{'background-color': msg.color}\" \n     style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n    \n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 1</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n    \n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 550,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4d0dd942611304c9",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@gogovega/firebase-config-node": "0.3.4",
+            "node-red-dashboard": "3.6.6",
+            "@gogovega/node-red-contrib-firebase-realtime-database": "0.8.2",
+            "node-red-node-ui-table": "0.4.5"
+        }
+    }
+]
