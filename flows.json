@@ -2,14 +2,14 @@
     {
         "id": "f6f2187d.f17ca8",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "Firebase",
         "disabled": false,
         "info": ""
     },
     {
         "id": "d78a1cc5aea2f3ae",
         "type": "tab",
-        "label": "Flow 2",
+        "label": "MQTT",
         "disabled": false,
         "info": "",
         "env": []
@@ -17,7 +17,15 @@
     {
         "id": "fbd85a30f492fd45",
         "type": "tab",
-        "label": "Flow 3",
+        "label": "System Control",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "40dbd4eefce72e0e",
+        "type": "tab",
+        "label": "Login & Security",
         "disabled": false,
         "info": "",
         "env": []
@@ -67,29 +75,23 @@
         "useClaims": false
     },
     {
-        "id": "5f166602f9f0dfe3",
-        "type": "ui_tab",
-        "name": "Home",
-        "icon": "dashboard",
-        "disabled": false,
-        "hidden": false
-    },
-    {
         "id": "edfd14a3bac6ed2b",
         "type": "ui_base",
         "theme": {
-            "name": "theme-light",
+            "name": "theme-dark",
             "lightTheme": {
                 "default": "#0094CE",
                 "baseColor": "#0094CE",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "darkTheme": {
                 "default": "#097479",
                 "baseColor": "#097479",
                 "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
-                "edited": false
+                "edited": true,
+                "reset": false
             },
             "customTheme": {
                 "name": "Untitled Theme 1",
@@ -99,44 +101,44 @@
             },
             "themeState": {
                 "base-color": {
-                    "default": "#0094CE",
-                    "value": "#0094CE",
+                    "default": "#097479",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-titlebar-backgroundColor": {
-                    "value": "#0094CE",
+                    "value": "#097479",
                     "edited": false
                 },
                 "page-backgroundColor": {
-                    "value": "#fafafa",
-                    "edited": false
-                },
-                "page-sidebar-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-textColor": {
-                    "value": "#1bbfff",
-                    "edited": false
-                },
-                "group-borderColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "group-backgroundColor": {
-                    "value": "#ffffff",
-                    "edited": false
-                },
-                "widget-textColor": {
                     "value": "#111111",
                     "edited": false
                 },
+                "page-sidebar-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#0eb8c0",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#555555",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#333333",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#eeeeee",
+                    "edited": false
+                },
                 "widget-backgroundColor": {
-                    "value": "#0094ce",
+                    "value": "#097479",
                     "edited": false
                 },
                 "widget-borderColor": {
-                    "value": "#ffffff",
+                    "value": "#333333",
                     "edited": false
                 },
                 "base-font": {
@@ -174,28 +176,19 @@
         "id": "activity_log_group",
         "type": "ui_group",
         "name": "Activity Log",
-        "tab": "5f166602f9f0dfe3",
-        "order": 4,
+        "tab": "7cbb3c971e163e7d",
+        "order": 3,
         "disp": true,
-        "width": "12"
+        "width": "12",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "b3bf710b67ec3bc9",
         "type": "ui_group",
         "name": "Safety Info",
-        "tab": "5f166602f9f0dfe3",
+        "tab": "7cbb3c971e163e7d",
         "order": 2,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "63f796d318b5ca89",
-        "type": "ui_group",
-        "name": "System Control",
-        "tab": "5f166602f9f0dfe3",
-        "order": 3,
         "disp": true,
         "width": 6,
         "collapse": false,
@@ -205,12 +198,93 @@
         "id": "6f546be7135824c6",
         "type": "ui_group",
         "name": "Parking Status",
-        "tab": "5f166602f9f0dfe3",
+        "tab": "7cbb3c971e163e7d",
         "order": 1,
         "disp": true,
         "width": "12",
         "collapse": false,
         "className": ""
+    },
+    {
+        "id": "4d0dd942611304c9",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@gogovega/firebase-config-node": "0.3.4",
+            "node-red-dashboard": "3.6.6",
+            "@gogovega/node-red-contrib-firebase-realtime-database": "0.8.2",
+            "node-red-node-ui-table": "0.4.5"
+        }
+    },
+    {
+        "id": "82c1ce6f40da2ef5",
+        "type": "ui_tab",
+        "name": "Admin Access",
+        "icon": "dashboard",
+        "order": 2,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "22104f713f9a0636",
+        "type": "ui_tab",
+        "name": "User View",
+        "icon": "dashboard",
+        "order": 1,
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "7cbb3c971e163e7d",
+        "type": "ui_tab",
+        "name": "Admin View",
+        "icon": "dashboard",
+        "order": 3,
+        "disabled": false,
+        "hidden": true
+    },
+    {
+        "id": "f5f93a2edbff8ba3",
+        "type": "ui_group",
+        "name": "Access_Control",
+        "tab": "82c1ce6f40da2ef5",
+        "order": 1,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b9528c6b547cb537",
+        "type": "ui_group",
+        "name": "User_Parking",
+        "tab": "22104f713f9a0636",
+        "order": 1,
+        "disp": true,
+        "width": 15,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "f19da899c53473ee",
+        "type": "ui_group",
+        "name": "User_Safety",
+        "tab": "22104f713f9a0636",
+        "order": 2,
+        "disp": true,
+        "width": 7,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "3eaf8e533c38cca0",
+        "type": "ui_spacer",
+        "z": "40dbd4eefce72e0e",
+        "name": "spacer",
+        "group": "",
+        "order": 3,
+        "width": 1,
+        "height": 1
     },
     {
         "id": "65a5106241318d93",
@@ -298,7 +372,8 @@
         "z": "f6f2187d.f17ca8",
         "name": "Firebase_Log_Receiver",
         "links": [
-            "4fc6a1f5c991df8c"
+            "4fc6a1f5c991df8c",
+            "8384b526c7935d56"
         ],
         "x": 275,
         "y": 600,
@@ -464,7 +539,11 @@
         "links": [
             "65a5106241318d93",
             "0d98a7b524fb4a3e",
-            "5a91f128fb069999"
+            "5a91f128fb069999",
+            "b724a28d30e64806",
+            "376fcd95ea803042",
+            "b3aa5956396cba2c",
+            "c2c830914eb78273"
         ],
         "x": 555,
         "y": 100,
@@ -479,7 +558,11 @@
         "links": [
             "e4c0756ae099b117",
             "3007d99697c011c6",
-            "5a91f128fb069999"
+            "5a91f128fb069999",
+            "2c20911e24c26057",
+            "2b5556bb685d0960",
+            "b3aa5956396cba2c",
+            "3bc75a758a633903"
         ],
         "x": 555,
         "y": 200,
@@ -494,7 +577,11 @@
         "links": [
             "228e56200a2d126c",
             "c156fdd606f3f538",
-            "5a91f128fb069999"
+            "5a91f128fb069999",
+            "ae62a0cef4affc16",
+            "e0945fbfc07bc29e",
+            "b3aa5956396cba2c",
+            "9a1b87382a29f9e0"
         ],
         "x": 555,
         "y": 300,
@@ -529,7 +616,10 @@
         "name": "To_UI_Available",
         "mode": "link",
         "links": [
-            "2492a0d48e4971b2"
+            "2492a0d48e4971b2",
+            "6868010cc46923c4",
+            "5621320dd491ba37",
+            "2ccebf4a6b066b17"
         ],
         "x": 515,
         "y": 420,
@@ -565,7 +655,11 @@
         "links": [
             "2bdb9085b2ec4a1b",
             "2d855b955afabeb7",
-            "5a91f128fb069999"
+            "5a91f128fb069999",
+            "56ba203eaebc2e17",
+            "9f9ab157878bce3c",
+            "b3aa5956396cba2c",
+            "1498fba49307e6a8"
         ],
         "x": 515,
         "y": 540,
@@ -600,7 +694,10 @@
         "mode": "link",
         "links": [
             "f41a9b0ce3f9491c",
-            "d74203f50d3ea595"
+            "d74203f50d3ea595",
+            "2d4d75f5bfbf62c5",
+            "b93196dff80e489a",
+            "42d552f2529fd20c"
         ],
         "x": 485,
         "y": 620,
@@ -630,7 +727,8 @@
         "z": "d78a1cc5aea2f3ae",
         "name": "From_UI_Buzzer",
         "links": [
-            "95d719a5695850b0"
+            "95d719a5695850b0",
+            "c4369b41cfa29f0e"
         ],
         "x": 155,
         "y": 680,
@@ -664,7 +762,8 @@
         "z": "d78a1cc5aea2f3ae",
         "name": "From_UI_Switch",
         "links": [
-            "4edcee16fcf5be92"
+            "4edcee16fcf5be92",
+            "632ff60c6113ed26"
         ],
         "x": 135,
         "y": 760,
@@ -693,131 +792,311 @@
         "wires": []
     },
     {
-        "id": "0d98a7b524fb4a3e",
+        "id": "c2c830914eb78273",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 1",
+        "links": [
+            "9c249e1f703a7ff4"
+        ],
+        "x": 555,
+        "y": 120,
+        "wires": [
+            [
+                "bc9c388c6382720d"
+            ]
+        ]
+    },
+    {
+        "id": "3bc75a758a633903",
         "type": "link in",
         "z": "fbd85a30f492fd45",
         "name": "link in 2",
         "links": [
-            "9c249e1f703a7ff4"
+            "2b732069f5723a18"
         ],
-        "x": 255,
-        "y": 60,
+        "x": 605,
+        "y": 220,
         "wires": [
             [
-                "816566ca8ed6c04f"
+                "7eb94ec302f9b8ba"
             ]
         ]
     },
     {
-        "id": "3007d99697c011c6",
+        "id": "9a1b87382a29f9e0",
         "type": "link in",
         "z": "fbd85a30f492fd45",
         "name": "link in 3",
         "links": [
-            "2b732069f5723a18"
+            "d2f8960d823cc35d"
         ],
-        "x": 305,
-        "y": 160,
+        "x": 595,
+        "y": 340,
         "wires": [
             [
-                "8aae30d68c90752d"
+                "9099c56d2a7c5edd"
             ]
         ]
     },
     {
-        "id": "c156fdd606f3f538",
+        "id": "bc9c388c6382720d",
+        "type": "function",
+        "z": "fbd85a30f492fd45",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 690,
+        "y": 120,
+        "wires": [
+            [
+                "ef94bdb7327168d0"
+            ]
+        ]
+    },
+    {
+        "id": "7eb94ec302f9b8ba",
+        "type": "function",
+        "z": "fbd85a30f492fd45",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 220,
+        "wires": [
+            [
+                "d5545bb99e030a04"
+            ]
+        ]
+    },
+    {
+        "id": "9099c56d2a7c5edd",
+        "type": "function",
+        "z": "fbd85a30f492fd45",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 340,
+        "wires": [
+            [
+                "ef59e6a011184877"
+            ]
+        ]
+    },
+    {
+        "id": "2ccebf4a6b066b17",
         "type": "link in",
         "z": "fbd85a30f492fd45",
         "name": "link in 4",
         "links": [
-            "d2f8960d823cc35d"
-        ],
-        "x": 295,
-        "y": 280,
-        "wires": [
-            [
-                "782c6451a100674e"
-            ]
-        ]
-    },
-    {
-        "id": "816566ca8ed6c04f",
-        "type": "function",
-        "z": "fbd85a30f492fd45",
-        "name": "Change color",
-        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 390,
-        "y": 60,
-        "wires": [
-            [
-                "33cfb54fbb7467b6"
-            ]
-        ]
-    },
-    {
-        "id": "8aae30d68c90752d",
-        "type": "function",
-        "z": "fbd85a30f492fd45",
-        "name": "Change color",
-        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 160,
-        "wires": [
-            [
-                "9302f87c42eb210f"
-            ]
-        ]
-    },
-    {
-        "id": "782c6451a100674e",
-        "type": "function",
-        "z": "fbd85a30f492fd45",
-        "name": "Change color",
-        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 410,
-        "y": 280,
-        "wires": [
-            [
-                "8645b2023d745d7e"
-            ]
-        ]
-    },
-    {
-        "id": "2492a0d48e4971b2",
-        "type": "link in",
-        "z": "fbd85a30f492fd45",
-        "name": "link in 7",
-        "links": [
             "4ee96eb4c1f477d6"
         ],
-        "x": 295,
-        "y": 400,
+        "x": 595,
+        "y": 460,
         "wires": [
             [
-                "1a55bfc6afb46e74"
+                "329fc51c32f75f58"
             ]
         ]
     },
     {
-        "id": "00df4b88e60dc476",
+        "id": "329fc51c32f75f58",
+        "type": "ui_gauge",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "group": "b9528c6b547cb537",
+        "order": 4,
+        "width": 15,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Available Slots",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "3",
+        "colors": [
+            "#ff0000",
+            "#e6e600",
+            "#00ff40"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 800,
+        "y": 460,
+        "wires": []
+    },
+    {
+        "id": "ef59e6a011184877",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "b9528c6b547cb537",
+        "name": "Slot 3",
+        "order": 3,
+        "width": 5,
+        "height": 5,
+        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 3</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 870,
+        "y": 340,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "d5545bb99e030a04",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "b9528c6b547cb537",
+        "name": "Slot 2",
+        "order": 2,
+        "width": 5,
+        "height": 5,
+        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 2</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 850,
+        "y": 220,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ef94bdb7327168d0",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "b9528c6b547cb537",
+        "name": "Slot 1",
+        "order": 1,
+        "width": 5,
+        "height": 5,
+        "format": "<div ng-style=\"{'background-color': msg.color}\" \n     style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n    \n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 1</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n    \n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 850,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1498fba49307e6a8",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 5",
+        "links": [
+            "a7b69fab224162e8"
+        ],
+        "x": 525,
+        "y": 620,
+        "wires": [
+            [
+                "8dd32348f59d87e3",
+                "49323d81ffb9a024"
+            ]
+        ]
+    },
+    {
+        "id": "8dd32348f59d87e3",
+        "type": "ui_chart",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "group": "f19da899c53473ee",
+        "order": 3,
+        "width": 7,
+        "height": 5,
+        "label": "Smoke Trend (Past 5 Mins)",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "bezier",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "4095",
+        "removeOlder": "5",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 770,
+        "y": 640,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "49323d81ffb9a024",
+        "type": "ui_gauge",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "group": "b3bf710b67ec3bc9",
+        "order": 1,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Smoke Level",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "4095",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 740,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "ae9722732bc97a98",
         "type": "function",
         "z": "fbd85a30f492fd45",
         "name": "function 1",
@@ -828,141 +1107,401 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 990,
-        "y": 300,
+        "x": 730,
+        "y": 720,
         "wires": [
             [
-                "cff27ab6e6deee07"
+                "e9446185c3e8b6e6"
             ]
         ]
     },
     {
-        "id": "2d855b955afabeb7",
+        "id": "42d552f2529fd20c",
         "type": "link in",
         "z": "fbd85a30f492fd45",
-        "name": "link in 8",
-        "links": [
-            "a7b69fab224162e8"
-        ],
-        "x": 805,
-        "y": 180,
-        "wires": [
-            [
-                "910969a2ac8a003f",
-                "b7f5b8516fb827c2"
-            ]
-        ]
-    },
-    {
-        "id": "d74203f50d3ea595",
-        "type": "link in",
-        "z": "fbd85a30f492fd45",
-        "name": "link in 9",
+        "name": "link in 6",
         "links": [
             "edd5826c8f0b7cef"
         ],
-        "x": 785,
-        "y": 300,
+        "x": 525,
+        "y": 720,
         "wires": [
             [
-                "00df4b88e60dc476"
+                "ae9722732bc97a98"
             ]
         ]
     },
     {
-        "id": "95d719a5695850b0",
-        "type": "link out",
+        "id": "e9446185c3e8b6e6",
+        "type": "ui_template",
         "z": "fbd85a30f492fd45",
+        "group": "f19da899c53473ee",
+        "name": "",
+        "order": 2,
+        "width": 7,
+        "height": 2,
+        "format": "<div ng-style=\"{'background-color': msg.color}\"\n    style=\"width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 8px; color: white; font-family: 'Arial Black', sans-serif; overflow: hidden; margin: 0; padding: 5px;\">\n\n    <i class=\"{{msg.icon}}\" style=\"font-size: 24px; margin-bottom: 4px;\"></i>\n    <div style=\"font-size: 16px; font-weight: bold; text-align: center; line-height: 1.1;\">\n        {{msg.text}}\n    </div>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 930,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "13f7bee2719c4a37",
+        "type": "ui_template",
+        "z": "40dbd4eefce72e0e",
+        "group": "f5f93a2edbff8ba3",
+        "name": "",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "format": "<div style=\"padding: 20px; text-align: center; background: #f9f9f9; border-radius: 10px;\">\n    <h3 style=\"color: #2c3e50; margin-bottom: 20px;\">Administrator Login</h3>\n\n    <input type=\"text\" ng-model=\"username\" placeholder=\"Enter Username\"\n           style=\"margin-bottom: 15px; padding: 10px; width: 85%; border: 1px solid #ccc; border-radius: 5px;\"><br>\n\n    <input type=\"password\" ng-model=\"password\" placeholder=\"Enter Password\"\n           style=\"margin-bottom: 25px; padding: 10px; width: 85%; border: 1px solid #ccc; border-radius: 5px;\"><br>\n\n    <button ng-click=\"send({payload: {user: username, pass: password}})\"\n            style=\"padding: 12px 30px; background: #2980b9; color: white; font-weight: bold; border: none; border-radius: 5px; cursor: pointer; width: 85%;\">\n        SECURE LOGIN\n    </button>\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 180,
+        "y": 320,
+        "wires": [
+            [
+                "25f69d76defcf332"
+            ]
+        ]
+    },
+    {
+        "id": "25f69d76defcf332",
+        "type": "function",
+        "z": "40dbd4eefce72e0e",
+        "name": "function 2",
+        "func": "// 1. Admin Credentials\nconst adminUser = \"admin\";\nconst adminPass = \"admin123\";\n\n// 2. Get inputs\nconst inputUser = msg.payload.user;\nconst inputPass = msg.payload.pass;\n\n// 3. Admin Check\nif (inputUser === adminUser && inputPass === adminPass) {\n    // Output 1: \n    msg.payload = { \"tab\": \"Admin View\" };\n    return [msg, null];\n}\nelse {\n    // Output 2: \n    msg.payload = \"Access Denied: Admin only.\";\n    return [null, msg];\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "c3749a7a2b0b95ac",
+                "8f3384b054493678"
+            ],
+            [
+                "2764b00ea8143740"
+            ]
+        ]
+    },
+    {
+        "id": "2764b00ea8143740",
+        "type": "ui_toast",
+        "z": "40dbd4eefce72e0e",
+        "position": "top right",
+        "displayTime": "3",
+        "highlight": "",
+        "sendall": true,
+        "outputs": 0,
+        "ok": "OK",
+        "cancel": "",
+        "raw": false,
+        "className": "",
+        "topic": "Login Failed",
+        "name": "",
+        "x": 630,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "c3749a7a2b0b95ac",
+        "type": "ui_ui_control",
+        "z": "40dbd4eefce72e0e",
+        "name": "",
+        "events": "all",
+        "x": 600,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "376fcd95ea803042",
+        "type": "link in",
+        "z": "40dbd4eefce72e0e",
+        "name": "link in 10",
+        "links": [
+            "9c249e1f703a7ff4"
+        ],
+        "x": 865,
+        "y": 160,
+        "wires": [
+            [
+                "5afd1035797aa273"
+            ]
+        ]
+    },
+    {
+        "id": "2b5556bb685d0960",
+        "type": "link in",
+        "z": "40dbd4eefce72e0e",
+        "name": "link in 11",
+        "links": [
+            "2b732069f5723a18"
+        ],
+        "x": 915,
+        "y": 260,
+        "wires": [
+            [
+                "4561a9f3c2322630"
+            ]
+        ]
+    },
+    {
+        "id": "e0945fbfc07bc29e",
+        "type": "link in",
+        "z": "40dbd4eefce72e0e",
+        "name": "link in 12",
+        "links": [
+            "d2f8960d823cc35d"
+        ],
+        "x": 905,
+        "y": 380,
+        "wires": [
+            [
+                "930c9d5b92387835"
+            ]
+        ]
+    },
+    {
+        "id": "5afd1035797aa273",
+        "type": "function",
+        "z": "40dbd4eefce72e0e",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1000,
+        "y": 160,
+        "wires": [
+            [
+                "b785169ad87aab17"
+            ]
+        ]
+    },
+    {
+        "id": "4561a9f3c2322630",
+        "type": "function",
+        "z": "40dbd4eefce72e0e",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 260,
+        "wires": [
+            [
+                "52a111f64663c033"
+            ]
+        ]
+    },
+    {
+        "id": "930c9d5b92387835",
+        "type": "function",
+        "z": "40dbd4eefce72e0e",
+        "name": "Change color",
+        "func": "let status = msg.payload.toString().trim();\n\nif (status === \"Occupied\" || status === \"1\") {\n    msg.color = \"#ff4d4d\";\n    msg.text = \"Occupied\";\n} else {\n    msg.color = \"#2ecc71\";\n    msg.text = \"Empty\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1020,
+        "y": 380,
+        "wires": [
+            [
+                "32f4d339c48ff787"
+            ]
+        ]
+    },
+    {
+        "id": "5621320dd491ba37",
+        "type": "link in",
+        "z": "40dbd4eefce72e0e",
+        "name": "link in 13",
+        "links": [
+            "4ee96eb4c1f477d6"
+        ],
+        "x": 905,
+        "y": 500,
+        "wires": [
+            [
+                "14e6abdb5293f8d5"
+            ]
+        ]
+    },
+    {
+        "id": "af31b157e9619914",
+        "type": "function",
+        "z": "40dbd4eefce72e0e",
+        "name": "function 4",
+        "func": "let reason = msg.payload.toString().trim().toLowerCase();\n\nif (reason === \"clear\") {\n    msg.color = \"#27ae60\";\n    msg.text = \"SYSTEM SECURE\";\n    msg.icon = \"fa fa-shield fa-2x\"; \n} else if (reason === \"smoke\") {\n    msg.color = \"#c0392b\"; \n    msg.text = \"FIRE: SMOKE DETECTED\";\n    msg.icon = \"fa fa-fire fa-2x\"; \n} else if (reason === \"panic\") {\n    msg.color = \"#8e44ad\"; \n    msg.text = \"EMERGENCY: PANIC BUTTON\";\n    msg.icon = \"fa fa-exclamation-triangle fa-2x\"; \n} else {\n    msg.color = \"#f39c12\"; \n    msg.text = \"ALERT: \" + reason.toUpperCase();\n    msg.icon = \"fa fa-warning fa-2x\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1600,
+        "y": 400,
+        "wires": [
+            [
+                "d6eccaa7393dcf93"
+            ]
+        ]
+    },
+    {
+        "id": "9f9ab157878bce3c",
+        "type": "link in",
+        "z": "40dbd4eefce72e0e",
+        "name": "link in 14",
+        "links": [
+            "a7b69fab224162e8"
+        ],
+        "x": 1415,
+        "y": 280,
+        "wires": [
+            [
+                "16178e2c5a870a49",
+                "7b95129b21c19d9f"
+            ]
+        ]
+    },
+    {
+        "id": "b93196dff80e489a",
+        "type": "link in",
+        "z": "40dbd4eefce72e0e",
+        "name": "link in 15",
+        "links": [
+            "edd5826c8f0b7cef"
+        ],
+        "x": 1395,
+        "y": 400,
+        "wires": [
+            [
+                "af31b157e9619914"
+            ]
+        ]
+    },
+    {
+        "id": "c4369b41cfa29f0e",
+        "type": "link out",
+        "z": "40dbd4eefce72e0e",
         "name": "To_Input_StopBuzz",
         "mode": "link",
         "links": [
-            "5a91f128fb069999",
+            "b3aa5956396cba2c",
             "8aeb41697625fafe"
         ],
-        "x": 545,
-        "y": 600,
+        "x": 1155,
+        "y": 700,
         "wires": []
     },
     {
-        "id": "4edcee16fcf5be92",
+        "id": "632ff60c6113ed26",
         "type": "link out",
-        "z": "fbd85a30f492fd45",
-        "name": "link out 1",
+        "z": "40dbd4eefce72e0e",
+        "name": "link out 2",
         "mode": "link",
         "links": [
-            "5a91f128fb069999",
+            "b3aa5956396cba2c",
             "e07ccade121b707d"
         ],
-        "x": 535,
-        "y": 680,
+        "x": 1145,
+        "y": 780,
         "wires": []
     },
     {
-        "id": "5a91f128fb069999",
+        "id": "b3aa5956396cba2c",
         "type": "link in",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "name": "Global_Event_Logger",
         "links": [
             "9c249e1f703a7ff4",
             "2b732069f5723a18",
             "d2f8960d823cc35d",
             "a7b69fab224162e8",
-            "95d719a5695850b0",
-            "4edcee16fcf5be92"
+            "c4369b41cfa29f0e",
+            "632ff60c6113ed26",
+            "d6a0019d2b810361"
         ],
-        "x": 715,
-        "y": 600,
+        "x": 1325,
+        "y": 700,
         "wires": [
             [
-                "new_logger_function"
+                "8aa41ff060dcf2e4"
             ]
         ]
     },
     {
-        "id": "new_logger_function",
+        "id": "8aa41ff060dcf2e4",
         "type": "function",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "name": "Smart Time Logger",
-        "func": "// 1. Get Malaysia time and timestamp\nconst timeSettings = { timeZone: 'Asia/Kuala_Lumpur', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };\nconst currentTime = new Date().toLocaleTimeString(\"en-GB\", timeSettings);\nconst currentTimestamp = Date.now(); // Used to calculate parking duration\n\nlet deviceName = msg.topic || \"Unknown\";\nlet payloadStr = (msg.payload != null) ? msg.payload.toString().trim() : \"\";\nlet actionStatus = \"\";\nlet remark = \"Live Update\"; // Default remark\n\n// 2. Core Logic (Added HTML Color Codes) --------------------------------\nif (msg.topic.includes(\"parking/slot/\")) {\n    let slotNum = msg.topic.slice(-1); // Extract slot number\n    deviceName = \"Parking Slot \" + slotNum;\n\n    if (payloadStr === \"1\" || payloadStr === \"Occupied\") {\n        actionStatus = \"<span style='color:#3498db; font-weight:bold;'>🚗 Vehicle Arrived</span>\";\n        // Store arrival time\n        flow.set(\"slot\" + slotNum + \"_arrive\", currentTimestamp);\n    }\n    else if (payloadStr === \"0\" || payloadStr === \"Empty\") {\n        actionStatus = \"<span style='color:#2ecc71; font-weight:bold;'>🔓 Slot Empty</span>\";\n        let arriveTime = flow.get(\"slot\" + slotNum + \"_arrive\");\n        if (arriveTime) {\n            let durationMs = currentTimestamp - arriveTime;\n            let durationMins = Math.floor(durationMs / 60000);\n            let durationSecs = Math.floor((durationMs % 60000) / 1000);\n\n            // 🌟 Fully English formatted string with styling\n            remark = `<span style='background-color:#e8f4f8; color:#2980b9; padding:2px 6px; border-radius:4px; font-weight:bold; border:1px solid #bdc3c7;'>⏱️ Parked: ${durationMins}m ${durationSecs}s</span>`;\n\n            flow.set(\"slot\" + slotNum + \"_arrive\", null); // Clear arrival time\n        }\n    }\n}\nelse if (msg.topic === \"parking/smoke/value\") {\n    deviceName = \"Smoke Detector\";\n    if (payloadStr === \"smoke\") actionStatus = \"<span style='color:red; font-weight:bold; font-size:14px;'>🔥 FIRE DETECTED</span>\";\n    else if (payloadStr === \"clear\") actionStatus = \"<span style='color:#27ae60;'>✅ Smoke Cleared</span>\";\n}\nelse if (msg.topic === \"parking/alarm/status\") {\n    deviceName = \"Emergency System\";\n    if (payloadStr === \"panic\") actionStatus = \"<span style='color:#8e44ad; font-weight:bold;'>🚨 PANIC BUTTON PRESSED</span>\";\n    else if (payloadStr === \"clear\") actionStatus = \"<span style='color:#27ae60;'>✅ Alarm Reset by Admin</span>\";\n}\nelse if (msg.topic === \"parking/buzzer/control\") {\n    deviceName = \"Admin Console\";\n    if (payloadStr === \"OFF\") actionStatus = \"<span style='color:#e67e22;'>🔕 Buzzer Muted</span>\";\n}\nelse if (msg.topic === \"parking/gate/control\") {\n    deviceName = \"Admin Console\";\n    if (payloadStr === \"OPEN\") actionStatus = \"<span style='color:#f39c12; font-weight:bold;'>🚧 Gate Opened</span>\";\n    else if (payloadStr === \"CLOSE\") actionStatus = \"<span style='color:#7f8c8d; font-weight:bold;'>🚧 Gate Closed</span>\";\n}\n\n// Filter out irrelevant noise/messages\nif (actionStatus === \"\") return null;\n\n// 3. Generate data for Table UI (with HTML colors)\nconst newLogEntry = {\n    \"Time\": currentTime,\n    \"Device\": deviceName,\n    \"Status\": actionStatus,\n    \"Remark\": remark\n};\n\nlet eventHistory = flow.get(\"eventLogs\") || [];\neventHistory.unshift(newLogEntry);\nif (eventHistory.length > 20) eventHistory.pop(); // Keep top 20 records\nflow.set(\"eventLogs\", eventHistory);\n\n// 4. Generate data for Firebase (Strip HTML tags to keep database clean)\nlet cleanStatus = actionStatus.replace(/<[^>]*>?/gm, '');\nlet cleanRemark = remark.replace(/<[^>]*>?/gm, ''); // 🌟 Clean the remark too\n\nconst firebaseEntry = {\n    \"Time\": currentTime,\n    \"Device\": deviceName,\n    \"Status\": cleanStatus,\n    \"Remark\": cleanRemark\n};\n\n// Output 1 (msg1) goes to UI Table, Output 2 (msg2) goes to Firebase\nlet msg1 = { payload: JSON.parse(JSON.stringify(eventHistory)) };\nlet msg2 = { payload: firebaseEntry };\n\nreturn [msg1, msg2];",
+        "func": "// 1. Get Malaysia time and timestamp\nconst timeSettings = { timeZone: 'Asia/Kuala_Lumpur', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };\nconst currentTime = new Date().toLocaleTimeString(\"en-GB\", timeSettings);\nconst currentTimestamp = Date.now(); // Used to calculate parking duration\n\nlet deviceName = msg.topic || \"Unknown\";\nlet payloadStr = (msg.payload != null) ? msg.payload.toString().trim() : \"\";\nlet actionStatus = \"\";\nlet remark = \"Live Update\"; // Default remark\n\n// 2. Core Logic (Added HTML Color Codes) --------------------------------\nif (msg.topic.includes(\"parking/slot/\")) {\n    let slotNum = msg.topic.slice(-1); // Extract slot number\n    deviceName = \"Parking Slot \" + slotNum;\n\n    if (payloadStr === \"1\" || payloadStr === \"Occupied\") {\n        actionStatus = \"<span style='color:#3498db; font-weight:bold;'>🚗 Vehicle Arrived</span>\";\n        // Store arrival time\n        flow.set(\"slot\" + slotNum + \"_arrive\", currentTimestamp);\n    }\n    else if (payloadStr === \"0\" || payloadStr === \"Empty\") {\n        actionStatus = \"<span style='color:#2ecc71; font-weight:bold;'>🔓 Slot Empty</span>\";\n        let arriveTime = flow.get(\"slot\" + slotNum + \"_arrive\");\n        if (arriveTime) {\n            let durationMs = currentTimestamp - arriveTime;\n            let durationMins = Math.floor(durationMs / 60000);\n            let durationSecs = Math.floor((durationMs % 60000) / 1000);\n\n            // 🌟 Fully English formatted string with styling\n            remark = `<span style='background-color:#e8f4f8; color:#2980b9; padding:2px 6px; border-radius:4px; font-weight:bold; border:1px solid #bdc3c7;'>⏱️ Parked: ${durationMins}m ${durationSecs}s</span>`;\n\n            flow.set(\"slot\" + slotNum + \"_arrive\", null); // Clear arrival time\n        }\n    }\n}\nelse if (msg.topic === \"parking/smoke/value\") {\n    deviceName = \"Smoke Detector\";\n    if (payloadStr === \"smoke\") actionStatus = \"<span style='color:red; font-weight:bold; font-size:14px;'>🔥 FIRE DETECTED</span>\";\n    else if (payloadStr === \"clear\") actionStatus = \"<span style='color:#27ae60;'>✅ Smoke Cleared</span>\";\n}\nelse if (msg.topic === \"system/auth\") {\n    deviceName = \"Security Portal\";\n    actionStatus = \"<span style='color:#9b59b6; font-weight:bold;'>🔐 \" + payloadStr + \"</span>\";\n    remark = \"System Access Granted\";\n}\nelse if (msg.topic === \"parking/alarm/status\") {\n    deviceName = \"Emergency System\";\n    if (payloadStr === \"panic\") actionStatus = \"<span style='color:#8e44ad; font-weight:bold;'>🚨 PANIC BUTTON PRESSED</span>\";\n    else if (payloadStr === \"clear\") actionStatus = \"<span style='color:#27ae60;'>✅ Alarm Reset by Admin</span>\";\n}\nelse if (msg.topic === \"parking/buzzer/control\") {\n    deviceName = \"Admin Console\";\n    if (payloadStr === \"OFF\") actionStatus = \"<span style='color:#e67e22;'>🔕 Buzzer Muted</span>\";\n}\nelse if (msg.topic === \"parking/gate/control\") {\n    deviceName = \"Admin Console\";\n    if (payloadStr === \"OPEN\") actionStatus = \"<span style='color:#f39c12; font-weight:bold;'>🚧 Gate Opened</span>\";\n    else if (payloadStr === \"CLOSE\") actionStatus = \"<span style='color:#7f8c8d; font-weight:bold;'>🚧 Gate Closed</span>\";\n}\n\n// Filter out irrelevant noise/messages\nif (actionStatus === \"\") return null;\n\n// 3. Generate data for Table UI (with HTML colors)\nconst newLogEntry = {\n    \"Time\": currentTime,\n    \"Device\": deviceName,\n    \"Status\": actionStatus,\n    \"Remark\": remark\n};\n\nlet eventHistory = flow.get(\"eventLogs\") || [];\neventHistory.unshift(newLogEntry);\nif (eventHistory.length > 20) eventHistory.pop(); // Keep top 20 records\nflow.set(\"eventLogs\", eventHistory);\n\n// 4. Generate data for Firebase (Strip HTML tags to keep database clean)\nlet cleanStatus = actionStatus.replace(/<[^>]*>?/gm, '');\nlet cleanRemark = remark.replace(/<[^>]*>?/gm, ''); // 🌟 Clean the remark too\n\nconst firebaseEntry = {\n    \"Time\": currentTime,\n    \"Device\": deviceName,\n    \"Status\": cleanStatus,\n    \"Remark\": cleanRemark\n};\n\n// Output 1 (msg1) goes to UI Table, Output 2 (msg2) goes to Firebase\nlet msg1 = { payload: JSON.parse(JSON.stringify(eventHistory)) };\nlet msg2 = { payload: firebaseEntry };\n\nreturn [msg1, msg2];",
         "outputs": 2,
         "timeout": "",
-        "noerr": 0,
+        "noerr": 1,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 900,
-        "y": 600,
+        "x": 1510,
+        "y": 700,
         "wires": [
             [
-                "f61cea607c804fda"
+                "db0f3fb1899b9288"
             ],
             [
-                "4fc6a1f5c991df8c"
+                "8384b526c7935d56"
             ]
         ]
     },
     {
-        "id": "4fc6a1f5c991df8c",
+        "id": "8384b526c7935d56",
         "type": "link out",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "name": "To_Firebase_ActivityLog",
         "mode": "link",
         "links": [
             "124fb20a780c7223"
         ],
-        "x": 1045,
-        "y": 700,
+        "x": 1655,
+        "y": 800,
         "wires": []
     },
     {
-        "id": "f61cea607c804fda",
+        "id": "db0f3fb1899b9288",
         "type": "ui_table",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "group": "activity_log_group",
         "name": "Activity Log Table",
-        "order": 1,
-        "width": "12",
-        "height": "6",
+        "order": 3,
+        "width": 12,
+        "height": 7,
         "columns": [
             {
                 "field": "Time",
@@ -1007,21 +1546,21 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1135,
-        "y": 600,
+        "x": 1745,
+        "y": 700,
         "wires": []
     },
     {
-        "id": "22b61b9bbd324cb4",
+        "id": "a577db5fa2abfd72",
         "type": "ui_switch",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "name": "",
         "label": "Admin Gate Control",
         "tooltip": "",
-        "group": "63f796d318b5ca89",
+        "group": "activity_log_group",
         "order": 1,
-        "width": "6",
-        "height": "2",
+        "width": 12,
+        "height": 2,
         "passthru": true,
         "decouple": "false",
         "topic": "parking/gate/control",
@@ -1037,23 +1576,23 @@
         "offcolor": "",
         "animate": false,
         "className": "",
-        "x": 340,
-        "y": 680,
+        "x": 950,
+        "y": 780,
         "wires": [
             [
-                "4edcee16fcf5be92"
+                "632ff60c6113ed26"
             ]
         ]
     },
     {
-        "id": "910969a2ac8a003f",
+        "id": "16178e2c5a870a49",
         "type": "ui_chart",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "name": "",
         "group": "b3bf710b67ec3bc9",
         "order": 3,
-        "width": "6",
-        "height": "5",
+        "width": 6,
+        "height": 5,
         "label": "Smoke Trend (Past 5 Mins)",
         "chartType": "line",
         "legend": "false",
@@ -1083,21 +1622,21 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1050,
-        "y": 200,
+        "x": 1660,
+        "y": 300,
         "wires": [
             []
         ]
     },
     {
-        "id": "5483220331da9dad",
+        "id": "c9d4509c6e68795b",
         "type": "ui_button",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "name": "",
-        "group": "63f796d318b5ca89",
-        "order": 0,
-        "width": "6",
-        "height": "2",
+        "group": "activity_log_group",
+        "order": 2,
+        "width": 12,
+        "height": 2,
         "passthru": false,
         "label": "   MUTE ALARM",
         "tooltip": "",
@@ -1109,23 +1648,23 @@
         "payloadType": "str",
         "topic": "parking/buzzer/control",
         "topicType": "str",
-        "x": 350,
-        "y": 600,
+        "x": 960,
+        "y": 700,
         "wires": [
             [
-                "95d719a5695850b0"
+                "c4369b41cfa29f0e"
             ]
         ]
     },
     {
-        "id": "b7f5b8516fb827c2",
+        "id": "7b95129b21c19d9f",
         "type": "ui_gauge",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "name": "",
-        "group": "b3bf710b67ec3bc9",
+        "group": "f19da899c53473ee",
         "order": 1,
-        "width": "6",
-        "height": "4",
+        "width": 7,
+        "height": 4,
         "gtype": "gage",
         "title": "Smoke Level",
         "label": "units",
@@ -1141,19 +1680,19 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1020,
-        "y": 140,
+        "x": 1630,
+        "y": 240,
         "wires": []
     },
     {
-        "id": "1a55bfc6afb46e74",
+        "id": "14e6abdb5293f8d5",
         "type": "ui_gauge",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "name": "",
         "group": "6f546be7135824c6",
-        "order": 3,
-        "width": "12",
-        "height": "6",
+        "order": 4,
+        "width": 12,
+        "height": 6,
         "gtype": "gage",
         "title": "Available Slots",
         "label": "units",
@@ -1169,103 +1708,139 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 500,
-        "y": 400,
+        "x": 1110,
+        "y": 500,
         "wires": []
     },
     {
-        "id": "cff27ab6e6deee07",
+        "id": "d6eccaa7393dcf93",
         "type": "ui_template",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "group": "b3bf710b67ec3bc9",
         "name": "",
         "order": 2,
-        "width": "6",
-        "height": "2",
+        "width": 6,
+        "height": 2,
         "format": "<div ng-style=\"{'background-color': msg.color}\"\n    style=\"width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 8px; color: white; font-family: 'Arial Black', sans-serif; overflow: hidden; margin: 0; padding: 5px;\">\n\n    <i class=\"{{msg.icon}}\" style=\"font-size: 24px; margin-bottom: 4px;\"></i>\n    <div style=\"font-size: 16px; font-weight: bold; text-align: center; line-height: 1.1;\">\n        {{msg.text}}\n    </div>\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1190,
-        "y": 300,
+        "x": 1800,
+        "y": 400,
         "wires": [
             []
         ]
     },
     {
-        "id": "8645b2023d745d7e",
+        "id": "32f4d339c48ff787",
         "type": "ui_template",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "group": "6f546be7135824c6",
         "name": "Slot 3",
         "order": 3,
-        "width": "4",
-        "height": "5",
+        "width": 4,
+        "height": 5,
         "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 3</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 570,
-        "y": 280,
+        "x": 1180,
+        "y": 380,
         "wires": [
             []
         ]
     },
     {
-        "id": "9302f87c42eb210f",
+        "id": "52a111f64663c033",
         "type": "ui_template",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "group": "6f546be7135824c6",
         "name": "Slot 2",
         "order": 2,
-        "width": "4",
-        "height": "5",
+        "width": 4,
+        "height": 5,
         "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 2</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 550,
-        "y": 160,
+        "x": 1160,
+        "y": 260,
         "wires": [
             []
         ]
     },
     {
-        "id": "33cfb54fbb7467b6",
+        "id": "b785169ad87aab17",
         "type": "ui_template",
-        "z": "fbd85a30f492fd45",
+        "z": "40dbd4eefce72e0e",
         "group": "6f546be7135824c6",
         "name": "Slot 1",
         "order": 1,
-        "width": "4",
-        "height": "5",
+        "width": 4,
+        "height": 5,
         "format": "<div ng-style=\"{'background-color': msg.color}\" \n     style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n    \n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 1</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n    \n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 550,
-        "y": 60,
+        "x": 1160,
+        "y": 160,
         "wires": [
             []
         ]
     },
     {
-        "id": "4d0dd942611304c9",
-        "type": "global-config",
-        "env": [],
-        "modules": {
-            "@gogovega/firebase-config-node": "0.3.4",
-            "node-red-dashboard": "3.6.6",
-            "@gogovega/node-red-contrib-firebase-realtime-database": "0.8.2",
-            "node-red-node-ui-table": "0.4.5"
-        }
+        "id": "8f3384b054493678",
+        "type": "change",
+        "z": "40dbd4eefce72e0e",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "system/auth",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Admin Logged In",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 600,
+        "y": 260,
+        "wires": [
+            [
+                "d6a0019d2b810361"
+            ]
+        ]
+    },
+    {
+        "id": "d6a0019d2b810361",
+        "type": "link out",
+        "z": "40dbd4eefce72e0e",
+        "name": "To_Global_Logger",
+        "mode": "link",
+        "links": [
+            "b3aa5956396cba2c"
+        ],
+        "x": 755,
+        "y": 260,
+        "wires": []
     }
 ]
