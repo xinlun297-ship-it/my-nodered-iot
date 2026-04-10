@@ -1,0 +1,14 @@
+{
+  "name": "my-nodered-iot",
+  "description": "Smart Parking Node-RED Project",
+  "version": "1.0.0",
+  "dependencies": {
+    "node-red": "latest",
+    "node-red-dashboard": "latest",
+    "node-red-contrib-ui-table": "latest",
+    "node-red-node-firebase": "latest"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
