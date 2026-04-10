@@ -6,7 +6,7 @@
     "node-red": "latest",
     "node-red-dashboard": "latest",
     "node-red-node-ui-table": "latest",
-    "@gogovega/node-red-contrib-firebase-realtime-database": "latest"，
+    "@gogovega/node-red-contrib-firebase-realtime-database": "latest",
     "node-red-contrib-ui-login": "latest"
   },
   "engines": {
