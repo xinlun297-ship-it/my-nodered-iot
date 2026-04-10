@@ -5,7 +5,8 @@
   "dependencies": {
     "node-red": "latest",
     "node-red-dashboard": "latest",
-    "node-red-node-ui-table": "latest"
+    "node-red-node-ui-table": "latest",
+    "@gogovega/node-red-contrib-firebase-realtime-database": "latest"
   },
   "engines": {
     "node": "18.x"
