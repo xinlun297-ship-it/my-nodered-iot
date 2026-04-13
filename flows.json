@@ -173,39 +173,6 @@
         }
     },
     {
-        "id": "activity_log_group",
-        "type": "ui_group",
-        "name": "Activity Log",
-        "tab": "7cbb3c971e163e7d",
-        "order": 3,
-        "disp": true,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "b3bf710b67ec3bc9",
-        "type": "ui_group",
-        "name": "Safety Info",
-        "tab": "7cbb3c971e163e7d",
-        "order": 2,
-        "disp": true,
-        "width": 6,
-        "collapse": false,
-        "className": ""
-    },
-    {
-        "id": "6f546be7135824c6",
-        "type": "ui_group",
-        "name": "Parking Status",
-        "tab": "7cbb3c971e163e7d",
-        "order": 1,
-        "disp": true,
-        "width": "12",
-        "collapse": false,
-        "className": ""
-    },
-    {
         "id": "4d0dd942611304c9",
         "type": "global-config",
         "env": [],
@@ -285,6 +252,39 @@
         "order": 3,
         "width": 1,
         "height": 1
+    },
+    {
+        "id": "activity_log_group",
+        "type": "ui_group",
+        "name": "Activity Log",
+        "tab": "7cbb3c971e163e7d",
+        "order": 3,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "b3bf710b67ec3bc9",
+        "type": "ui_group",
+        "name": "Safety Info",
+        "tab": "7cbb3c971e163e7d",
+        "order": 2,
+        "disp": true,
+        "width": 6,
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "6f546be7135824c6",
+        "type": "ui_group",
+        "name": "Parking Status",
+        "tab": "7cbb3c971e163e7d",
+        "order": 1,
+        "disp": true,
+        "width": "12",
+        "collapse": false,
+        "className": ""
     },
     {
         "id": "65a5106241318d93",
@@ -367,23 +367,6 @@
         ]
     },
     {
-        "id": "124fb20a780c7223",
-        "type": "link in",
-        "z": "f6f2187d.f17ca8",
-        "name": "Firebase_Log_Receiver",
-        "links": [
-            "4fc6a1f5c991df8c",
-            "8384b526c7935d56"
-        ],
-        "x": 275,
-        "y": 600,
-        "wires": [
-            [
-                "bb2c537480eddd5b"
-            ]
-        ]
-    },
-    {
         "id": "956baa758ff6ea88",
         "type": "firebase-out",
         "z": "f6f2187d.f17ca8",
@@ -454,18 +437,34 @@
         "wires": []
     },
     {
-        "id": "bb2c537480eddd5b",
+        "id": "da8bb143eb09b30c",
         "type": "firebase-out",
         "z": "f6f2187d.f17ca8",
-        "name": "",
+        "name": "Push to Firebase History",
         "database": "1d754faa898b190d",
-        "path": "SmartParking/ActivityLogs",
+        "path": "SmartParking/History",
         "pathType": "str",
         "priority": "1",
         "queryType": "push",
-        "x": 570,
+        "x": 550,
         "y": 600,
         "wires": []
+    },
+    {
+        "id": "b52ffc079c3de207",
+        "type": "link in",
+        "z": "f6f2187d.f17ca8",
+        "name": "link in 1",
+        "links": [
+            "8384b526c7935d56"
+        ],
+        "x": 275,
+        "y": 600,
+        "wires": [
+            [
+                "da8bb143eb09b30c"
+            ]
+        ]
     },
     {
         "id": "b244b4141a70150c",
@@ -484,7 +483,7 @@
         "y": 100,
         "wires": [
             [
-                "9c249e1f703a7ff4"
+                "24ce6d85d1c1f914"
             ]
         ]
     },
@@ -505,7 +504,7 @@
         "y": 200,
         "wires": [
             [
-                "2b732069f5723a18"
+                "0fdcb9ee3ea1ba1f"
             ]
         ]
     },
@@ -526,7 +525,7 @@
         "y": 300,
         "wires": [
             [
-                "d2f8960d823cc35d"
+                "d93af448b6cb1a92"
             ]
         ]
     },
@@ -538,14 +537,13 @@
         "mode": "link",
         "links": [
             "65a5106241318d93",
-            "0d98a7b524fb4a3e",
-            "5a91f128fb069999",
-            "b724a28d30e64806",
             "376fcd95ea803042",
             "b3aa5956396cba2c",
-            "c2c830914eb78273"
+            "c2c830914eb78273",
+            "20320e81bd72a0ad",
+            "92856e56a786ca7d"
         ],
-        "x": 555,
+        "x": 865,
         "y": 100,
         "wires": []
     },
@@ -557,14 +555,13 @@
         "mode": "link",
         "links": [
             "e4c0756ae099b117",
-            "3007d99697c011c6",
-            "5a91f128fb069999",
-            "2c20911e24c26057",
             "2b5556bb685d0960",
             "b3aa5956396cba2c",
-            "3bc75a758a633903"
+            "3bc75a758a633903",
+            "9927d31d775af7a5",
+            "eecd8f9a70856503"
         ],
-        "x": 555,
+        "x": 865,
         "y": 200,
         "wires": []
     },
@@ -576,14 +573,13 @@
         "mode": "link",
         "links": [
             "228e56200a2d126c",
-            "c156fdd606f3f538",
-            "5a91f128fb069999",
-            "ae62a0cef4affc16",
             "e0945fbfc07bc29e",
             "b3aa5956396cba2c",
-            "9a1b87382a29f9e0"
+            "9a1b87382a29f9e0",
+            "d61c6adfc04afca3",
+            "a2afffb63241ef9e"
         ],
-        "x": 555,
+        "x": 855,
         "y": 300,
         "wires": []
     },
@@ -616,10 +612,10 @@
         "name": "To_UI_Available",
         "mode": "link",
         "links": [
-            "2492a0d48e4971b2",
-            "6868010cc46923c4",
             "5621320dd491ba37",
-            "2ccebf4a6b066b17"
+            "2ccebf4a6b066b17",
+            "c10d34fbc20df9ff",
+            "c9507cd9123a7b1f"
         ],
         "x": 515,
         "y": 420,
@@ -638,8 +634,8 @@
         "rap": true,
         "rh": 0,
         "inputs": 0,
-        "x": 230,
-        "y": 540,
+        "x": 570,
+        "y": 520,
         "wires": [
             [
                 "a7b69fab224162e8"
@@ -653,16 +649,14 @@
         "name": "To_UI_Smoke",
         "mode": "link",
         "links": [
+            "1498fba49307e6a8",
             "2bdb9085b2ec4a1b",
-            "2d855b955afabeb7",
-            "5a91f128fb069999",
-            "56ba203eaebc2e17",
             "9f9ab157878bce3c",
-            "b3aa5956396cba2c",
-            "1498fba49307e6a8"
+            "cc3bfe114622d9d7",
+            "95b731141b7312eb"
         ],
-        "x": 515,
-        "y": 540,
+        "x": 775,
+        "y": 520,
         "wires": []
     },
     {
@@ -694,10 +688,11 @@
         "mode": "link",
         "links": [
             "f41a9b0ce3f9491c",
-            "d74203f50d3ea595",
-            "2d4d75f5bfbf62c5",
             "b93196dff80e489a",
-            "42d552f2529fd20c"
+            "42d552f2529fd20c",
+            "1402740c13fb81c2",
+            "477446475d992944",
+            "b3aa5956396cba2c"
         ],
         "x": 485,
         "y": 620,
@@ -727,7 +722,6 @@
         "z": "d78a1cc5aea2f3ae",
         "name": "From_UI_Buzzer",
         "links": [
-            "95d719a5695850b0",
             "c4369b41cfa29f0e"
         ],
         "x": 155,
@@ -762,7 +756,6 @@
         "z": "d78a1cc5aea2f3ae",
         "name": "From_UI_Switch",
         "links": [
-            "4edcee16fcf5be92",
             "632ff60c6113ed26"
         ],
         "x": 135,
@@ -792,55 +785,196 @@
         "wires": []
     },
     {
-        "id": "c2c830914eb78273",
+        "id": "24ce6d85d1c1f914",
+        "type": "rbe",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "Filter Repeats",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 520,
+        "y": 100,
+        "wires": [
+            [
+                "6ff65aa730dcf1ad"
+            ]
+        ]
+    },
+    {
+        "id": "0fdcb9ee3ea1ba1f",
+        "type": "rbe",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "Filter Repeats",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 520,
+        "y": 200,
+        "wires": [
+            [
+                "e71ce197dfd2db8b"
+            ]
+        ]
+    },
+    {
+        "id": "d93af448b6cb1a92",
+        "type": "rbe",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "Filter Repeats",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 520,
+        "y": 300,
+        "wires": [
+            [
+                "8853415b5219ab36"
+            ]
+        ]
+    },
+    {
+        "id": "6ff65aa730dcf1ad",
+        "type": "change",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "parking/slot/1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 100,
+        "wires": [
+            [
+                "9c249e1f703a7ff4"
+            ]
+        ]
+    },
+    {
+        "id": "e71ce197dfd2db8b",
+        "type": "change",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "parking/slot/2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 200,
+        "wires": [
+            [
+                "2b732069f5723a18"
+            ]
+        ]
+    },
+    {
+        "id": "8853415b5219ab36",
+        "type": "change",
+        "z": "d78a1cc5aea2f3ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "parking/slot/3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 710,
+        "y": 300,
+        "wires": [
+            [
+                "d2f8960d823cc35d"
+            ]
+        ]
+    },
+    {
+        "id": "92856e56a786ca7d",
         "type": "link in",
         "z": "fbd85a30f492fd45",
-        "name": "link in 1",
+        "name": "link in 7",
         "links": [
             "9c249e1f703a7ff4"
         ],
-        "x": 555,
-        "y": 120,
+        "x": 1375,
+        "y": 200,
         "wires": [
             [
-                "bc9c388c6382720d"
+                "4d6cfeebf4304c6f"
             ]
         ]
     },
     {
-        "id": "3bc75a758a633903",
+        "id": "eecd8f9a70856503",
         "type": "link in",
         "z": "fbd85a30f492fd45",
-        "name": "link in 2",
+        "name": "link in 8",
         "links": [
             "2b732069f5723a18"
         ],
-        "x": 605,
-        "y": 220,
+        "x": 1425,
+        "y": 300,
         "wires": [
             [
-                "7eb94ec302f9b8ba"
+                "036672a79d84bc0c"
             ]
         ]
     },
     {
-        "id": "9a1b87382a29f9e0",
+        "id": "a2afffb63241ef9e",
         "type": "link in",
         "z": "fbd85a30f492fd45",
-        "name": "link in 3",
+        "name": "link in 9",
         "links": [
             "d2f8960d823cc35d"
         ],
-        "x": 595,
-        "y": 340,
+        "x": 1415,
+        "y": 420,
         "wires": [
             [
-                "9099c56d2a7c5edd"
+                "a8b067f8b55c6450"
             ]
         ]
     },
     {
-        "id": "bc9c388c6382720d",
+        "id": "4d6cfeebf4304c6f",
         "type": "function",
         "z": "fbd85a30f492fd45",
         "name": "Change color",
@@ -851,16 +985,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 690,
-        "y": 120,
+        "x": 1510,
+        "y": 200,
         "wires": [
             [
-                "ef94bdb7327168d0"
+                "154c0eac742232e1"
             ]
         ]
     },
     {
-        "id": "7eb94ec302f9b8ba",
+        "id": "036672a79d84bc0c",
         "type": "function",
         "z": "fbd85a30f492fd45",
         "name": "Change color",
@@ -871,16 +1005,16 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 220,
+        "x": 1530,
+        "y": 300,
         "wires": [
             [
-                "d5545bb99e030a04"
+                "da19ea540b7136ae"
             ]
         ]
     },
     {
-        "id": "9099c56d2a7c5edd",
+        "id": "a8b067f8b55c6450",
         "type": "function",
         "z": "fbd85a30f492fd45",
         "name": "Change color",
@@ -891,146 +1025,91 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 710,
-        "y": 340,
+        "x": 1530,
+        "y": 420,
         "wires": [
             [
-                "ef59e6a011184877"
+                "ef9783379c5319f3"
             ]
         ]
     },
     {
-        "id": "2ccebf4a6b066b17",
+        "id": "c9507cd9123a7b1f",
         "type": "link in",
         "z": "fbd85a30f492fd45",
-        "name": "link in 4",
+        "name": "link in 10",
         "links": [
             "4ee96eb4c1f477d6"
         ],
-        "x": 595,
-        "y": 460,
+        "x": 1415,
+        "y": 540,
         "wires": [
             [
-                "329fc51c32f75f58"
+                "05a829e6d5821182"
             ]
         ]
     },
     {
-        "id": "329fc51c32f75f58",
-        "type": "ui_gauge",
+        "id": "151661df243b45bf",
+        "type": "function",
         "z": "fbd85a30f492fd45",
-        "name": "",
-        "group": "b9528c6b547cb537",
-        "order": 4,
-        "width": 15,
-        "height": 6,
-        "gtype": "gage",
-        "title": "Available Slots",
-        "label": "units",
-        "format": "{{value}}",
-        "min": 0,
-        "max": "3",
-        "colors": [
-            "#ff0000",
-            "#e6e600",
-            "#00ff40"
-        ],
-        "seg1": "",
-        "seg2": "",
-        "diff": false,
-        "className": "",
-        "x": 800,
-        "y": 460,
-        "wires": []
-    },
-    {
-        "id": "ef59e6a011184877",
-        "type": "ui_template",
-        "z": "fbd85a30f492fd45",
-        "group": "b9528c6b547cb537",
-        "name": "Slot 3",
-        "order": 3,
-        "width": 5,
-        "height": 5,
-        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 3</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 870,
-        "y": 340,
+        "name": "function 5",
+        "func": "let reason = msg.payload.toString().trim().toLowerCase();\n\nif (reason === \"clear\") {\n    msg.color = \"#27ae60\";\n    msg.text = \"SYSTEM SECURE\";\n    msg.icon = \"fa fa-shield fa-2x\"; \n} else if (reason === \"smoke\") {\n    msg.color = \"#c0392b\"; \n    msg.text = \"FIRE: SMOKE DETECTED\";\n    msg.icon = \"fa fa-fire fa-2x\"; \n} else if (reason === \"panic\") {\n    msg.color = \"#8e44ad\"; \n    msg.text = \"EMERGENCY: PANIC BUTTON\";\n    msg.icon = \"fa fa-exclamation-triangle fa-2x\"; \n} else {\n    msg.color = \"#f39c12\"; \n    msg.text = \"ALERT: \" + reason.toUpperCase();\n    msg.icon = \"fa fa-warning fa-2x\";\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2110,
+        "y": 440,
         "wires": [
-            []
+            [
+                "b4ada3d9667b747a"
+            ]
         ]
     },
     {
-        "id": "d5545bb99e030a04",
-        "type": "ui_template",
-        "z": "fbd85a30f492fd45",
-        "group": "b9528c6b547cb537",
-        "name": "Slot 2",
-        "order": 2,
-        "width": 5,
-        "height": 5,
-        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 2</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 850,
-        "y": 220,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "ef94bdb7327168d0",
-        "type": "ui_template",
-        "z": "fbd85a30f492fd45",
-        "group": "b9528c6b547cb537",
-        "name": "Slot 1",
-        "order": 1,
-        "width": 5,
-        "height": 5,
-        "format": "<div ng-style=\"{'background-color': msg.color}\" \n     style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n    \n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 1</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n    \n</div>",
-        "storeOutMessages": true,
-        "fwdInMessages": true,
-        "resendOnRefresh": true,
-        "templateScope": "local",
-        "className": "",
-        "x": 850,
-        "y": 120,
-        "wires": [
-            []
-        ]
-    },
-    {
-        "id": "1498fba49307e6a8",
+        "id": "95b731141b7312eb",
         "type": "link in",
         "z": "fbd85a30f492fd45",
-        "name": "link in 5",
+        "name": "link in 11",
         "links": [
             "a7b69fab224162e8"
         ],
-        "x": 525,
-        "y": 620,
+        "x": 1955,
+        "y": 320,
         "wires": [
             [
-                "8dd32348f59d87e3",
-                "49323d81ffb9a024"
+                "2e83b780f6f70ba5",
+                "29b97c03068589a0"
             ]
         ]
     },
     {
-        "id": "8dd32348f59d87e3",
+        "id": "477446475d992944",
+        "type": "link in",
+        "z": "fbd85a30f492fd45",
+        "name": "link in 12",
+        "links": [
+            "edd5826c8f0b7cef"
+        ],
+        "x": 1955,
+        "y": 440,
+        "wires": [
+            [
+                "151661df243b45bf"
+            ]
+        ]
+    },
+    {
+        "id": "1f1aae097248111a",
         "type": "ui_chart",
         "z": "fbd85a30f492fd45",
         "name": "",
-        "group": "f19da899c53473ee",
+        "group": "b3bf710b67ec3bc9",
         "order": 3,
-        "width": 7,
+        "width": 6,
         "height": 5,
         "label": "Smoke Trend (Past 5 Mins)",
         "chartType": "line",
@@ -1061,20 +1140,20 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 770,
-        "y": 640,
+        "x": 2330,
+        "y": 340,
         "wires": [
             []
         ]
     },
     {
-        "id": "49323d81ffb9a024",
+        "id": "a5ae2ca52669c5cc",
         "type": "ui_gauge",
         "z": "fbd85a30f492fd45",
         "name": "",
-        "group": "b3bf710b67ec3bc9",
+        "group": "f19da899c53473ee",
         "order": 1,
-        "width": 6,
+        "width": 7,
         "height": 4,
         "gtype": "gage",
         "title": "Smoke Level",
@@ -1091,54 +1170,46 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 740,
-        "y": 580,
+        "x": 2300,
+        "y": 280,
         "wires": []
     },
     {
-        "id": "ae9722732bc97a98",
-        "type": "function",
+        "id": "2a5cc8e8ba7dfc64",
+        "type": "ui_gauge",
         "z": "fbd85a30f492fd45",
-        "name": "function 1",
-        "func": "let reason = msg.payload.toString().trim().toLowerCase();\n\nif (reason === \"clear\") {\n    msg.color = \"#27ae60\";\n    msg.text = \"SYSTEM SECURE\";\n    msg.icon = \"fa fa-shield fa-2x\"; \n} else if (reason === \"smoke\") {\n    msg.color = \"#c0392b\"; \n    msg.text = \"FIRE: SMOKE DETECTED\";\n    msg.icon = \"fa fa-fire fa-2x\"; \n} else if (reason === \"panic\") {\n    msg.color = \"#8e44ad\"; \n    msg.text = \"EMERGENCY: PANIC BUTTON\";\n    msg.icon = \"fa fa-exclamation-triangle fa-2x\"; \n} else {\n    msg.color = \"#f39c12\"; \n    msg.text = \"ALERT: \" + reason.toUpperCase();\n    msg.icon = \"fa fa-warning fa-2x\";\n}\nreturn msg;",
-        "outputs": 1,
-        "timeout": 0,
-        "noerr": 0,
-        "initialize": "",
-        "finalize": "",
-        "libs": [],
-        "x": 730,
-        "y": 720,
-        "wires": [
-            [
-                "e9446185c3e8b6e6"
-            ]
-        ]
-    },
-    {
-        "id": "42d552f2529fd20c",
-        "type": "link in",
-        "z": "fbd85a30f492fd45",
-        "name": "link in 6",
-        "links": [
-            "edd5826c8f0b7cef"
+        "name": "",
+        "group": "6f546be7135824c6",
+        "order": 4,
+        "width": 12,
+        "height": 6,
+        "gtype": "gage",
+        "title": "Available Slots",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "3",
+        "colors": [
+            "#ff0000",
+            "#e6e600",
+            "#00ff40"
         ],
-        "x": 525,
-        "y": 720,
-        "wires": [
-            [
-                "ae9722732bc97a98"
-            ]
-        ]
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 1730,
+        "y": 540,
+        "wires": []
     },
     {
-        "id": "e9446185c3e8b6e6",
+        "id": "b4ada3d9667b747a",
         "type": "ui_template",
         "z": "fbd85a30f492fd45",
-        "group": "f19da899c53473ee",
+        "group": "b3bf710b67ec3bc9",
         "name": "",
         "order": 2,
-        "width": 7,
+        "width": 6,
         "height": 2,
         "format": "<div ng-style=\"{'background-color': msg.color}\"\n    style=\"width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 8px; color: white; font-family: 'Arial Black', sans-serif; overflow: hidden; margin: 0; padding: 5px;\">\n\n    <i class=\"{{msg.icon}}\" style=\"font-size: 24px; margin-bottom: 4px;\"></i>\n    <div style=\"font-size: 16px; font-weight: bold; text-align: center; line-height: 1.1;\">\n        {{msg.text}}\n    </div>\n</div>",
         "storeOutMessages": true,
@@ -1146,10 +1217,223 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 930,
-        "y": 720,
+        "x": 2310,
+        "y": 440,
         "wires": [
             []
+        ]
+    },
+    {
+        "id": "e712efa1a6324638",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "6f546be7135824c6",
+        "name": "Slot 3",
+        "order": 3,
+        "width": 4,
+        "height": 5,
+        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 3</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1840,
+        "y": 420,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "31575df2d736da9d",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "6f546be7135824c6",
+        "name": "Slot 2",
+        "order": 2,
+        "width": 4,
+        "height": 5,
+        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 2</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n\n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1860,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9f52d759ebc13c7f",
+        "type": "ui_template",
+        "z": "fbd85a30f492fd45",
+        "group": "6f546be7135824c6",
+        "name": "Slot 1",
+        "order": 1,
+        "width": 4,
+        "height": 5,
+        "format": "<div ng-style=\"{'background-color': msg.color}\" \n     style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n    \n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 1</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n    \n</div>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 1880,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "154c0eac742232e1",
+        "type": "delay",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1710,
+        "y": 200,
+        "wires": [
+            [
+                "9f52d759ebc13c7f"
+            ]
+        ]
+    },
+    {
+        "id": "da19ea540b7136ae",
+        "type": "delay",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1710,
+        "y": 300,
+        "wires": [
+            [
+                "31575df2d736da9d"
+            ]
+        ]
+    },
+    {
+        "id": "ef9783379c5319f3",
+        "type": "delay",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1690,
+        "y": 420,
+        "wires": [
+            [
+                "e712efa1a6324638"
+            ]
+        ]
+    },
+    {
+        "id": "05a829e6d5821182",
+        "type": "delay",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1530,
+        "y": 540,
+        "wires": [
+            [
+                "2a5cc8e8ba7dfc64"
+            ]
+        ]
+    },
+    {
+        "id": "2e83b780f6f70ba5",
+        "type": "delay",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2110,
+        "y": 280,
+        "wires": [
+            [
+                "a5ae2ca52669c5cc"
+            ]
+        ]
+    },
+    {
+        "id": "29b97c03068589a0",
+        "type": "delay",
+        "z": "fbd85a30f492fd45",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 2110,
+        "y": 340,
+        "wires": [
+            [
+                "1f1aae097248111a"
+            ]
         ]
     },
     {
@@ -1294,7 +1578,7 @@
         "y": 160,
         "wires": [
             [
-                "b785169ad87aab17"
+                "17a6707716c50d51"
             ]
         ]
     },
@@ -1314,7 +1598,7 @@
         "y": 260,
         "wires": [
             [
-                "52a111f64663c033"
+                "2282629ede66ca5e"
             ]
         ]
     },
@@ -1334,7 +1618,7 @@
         "y": 380,
         "wires": [
             [
-                "32f4d339c48ff787"
+                "6e5e31c65de2bf0c"
             ]
         ]
     },
@@ -1350,7 +1634,7 @@
         "y": 500,
         "wires": [
             [
-                "14e6abdb5293f8d5"
+                "3c20934948d18a58"
             ]
         ]
     },
@@ -1382,11 +1666,11 @@
         "links": [
             "a7b69fab224162e8"
         ],
-        "x": 1415,
-        "y": 280,
+        "x": 1445,
+        "y": 260,
         "wires": [
             [
-                "16178e2c5a870a49",
+                "34f966f242f44856",
                 "7b95129b21c19d9f"
             ]
         ]
@@ -1414,7 +1698,6 @@
         "name": "To_Input_StopBuzz",
         "mode": "link",
         "links": [
-            "b3aa5956396cba2c",
             "8aeb41697625fafe"
         ],
         "x": 1155,
@@ -1441,13 +1724,12 @@
         "z": "40dbd4eefce72e0e",
         "name": "Global_Event_Logger",
         "links": [
-            "9c249e1f703a7ff4",
             "2b732069f5723a18",
-            "d2f8960d823cc35d",
-            "a7b69fab224162e8",
-            "c4369b41cfa29f0e",
             "632ff60c6113ed26",
-            "d6a0019d2b810361"
+            "9c249e1f703a7ff4",
+            "d2f8960d823cc35d",
+            "d6a0019d2b810361",
+            "edd5826c8f0b7cef"
         ],
         "x": 1325,
         "y": 700,
@@ -1462,15 +1744,15 @@
         "type": "function",
         "z": "40dbd4eefce72e0e",
         "name": "Smart Time Logger",
-        "func": "// 1. Get Malaysia time and timestamp\nconst timeSettings = { timeZone: 'Asia/Kuala_Lumpur', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };\nconst currentTime = new Date().toLocaleTimeString(\"en-GB\", timeSettings);\nconst currentTimestamp = Date.now(); // Used to calculate parking duration\n\nlet deviceName = msg.topic || \"Unknown\";\nlet payloadStr = (msg.payload != null) ? msg.payload.toString().trim() : \"\";\nlet actionStatus = \"\";\nlet remark = \"Live Update\"; // Default remark\n\n// 2. Core Logic (Added HTML Color Codes) --------------------------------\nif (msg.topic.includes(\"parking/slot/\")) {\n    let slotNum = msg.topic.slice(-1); // Extract slot number\n    deviceName = \"Parking Slot \" + slotNum;\n\n    if (payloadStr === \"1\" || payloadStr === \"Occupied\") {\n        actionStatus = \"<span style='color:#3498db; font-weight:bold;'>🚗 Vehicle Arrived</span>\";\n        // Store arrival time\n        flow.set(\"slot\" + slotNum + \"_arrive\", currentTimestamp);\n    }\n    else if (payloadStr === \"0\" || payloadStr === \"Empty\") {\n        actionStatus = \"<span style='color:#2ecc71; font-weight:bold;'>🔓 Slot Empty</span>\";\n        let arriveTime = flow.get(\"slot\" + slotNum + \"_arrive\");\n        if (arriveTime) {\n            let durationMs = currentTimestamp - arriveTime;\n            let durationMins = Math.floor(durationMs / 60000);\n            let durationSecs = Math.floor((durationMs % 60000) / 1000);\n\n            // 🌟 Fully English formatted string with styling\n            remark = `<span style='background-color:#e8f4f8; color:#2980b9; padding:2px 6px; border-radius:4px; font-weight:bold; border:1px solid #bdc3c7;'>⏱️ Parked: ${durationMins}m ${durationSecs}s</span>`;\n\n            flow.set(\"slot\" + slotNum + \"_arrive\", null); // Clear arrival time\n        }\n    }\n}\nelse if (msg.topic === \"parking/smoke/value\") {\n    deviceName = \"Smoke Detector\";\n    if (payloadStr === \"smoke\") actionStatus = \"<span style='color:red; font-weight:bold; font-size:14px;'>🔥 FIRE DETECTED</span>\";\n    else if (payloadStr === \"clear\") actionStatus = \"<span style='color:#27ae60;'>✅ Smoke Cleared</span>\";\n}\nelse if (msg.topic === \"system/auth\") {\n    deviceName = \"Security Portal\";\n    actionStatus = \"<span style='color:#9b59b6; font-weight:bold;'>🔐 \" + payloadStr + \"</span>\";\n    remark = \"System Access Granted\";\n}\nelse if (msg.topic === \"parking/alarm/status\") {\n    deviceName = \"Emergency System\";\n    if (payloadStr === \"panic\") actionStatus = \"<span style='color:#8e44ad; font-weight:bold;'>🚨 PANIC BUTTON PRESSED</span>\";\n    else if (payloadStr === \"clear\") actionStatus = \"<span style='color:#27ae60;'>✅ Alarm Reset by Admin</span>\";\n}\nelse if (msg.topic === \"parking/buzzer/control\") {\n    deviceName = \"Admin Console\";\n    if (payloadStr === \"OFF\") actionStatus = \"<span style='color:#e67e22;'>🔕 Buzzer Muted</span>\";\n}\nelse if (msg.topic === \"parking/gate/control\") {\n    deviceName = \"Admin Console\";\n    if (payloadStr === \"OPEN\") actionStatus = \"<span style='color:#f39c12; font-weight:bold;'>🚧 Gate Opened</span>\";\n    else if (payloadStr === \"CLOSE\") actionStatus = \"<span style='color:#7f8c8d; font-weight:bold;'>🚧 Gate Closed</span>\";\n}\n\n// Filter out irrelevant noise/messages\nif (actionStatus === \"\") return null;\n\n// 3. Generate data for Table UI (with HTML colors)\nconst newLogEntry = {\n    \"Time\": currentTime,\n    \"Device\": deviceName,\n    \"Status\": actionStatus,\n    \"Remark\": remark\n};\n\nlet eventHistory = flow.get(\"eventLogs\") || [];\neventHistory.unshift(newLogEntry);\nif (eventHistory.length > 20) eventHistory.pop(); // Keep top 20 records\nflow.set(\"eventLogs\", eventHistory);\n\n// 4. Generate data for Firebase (Strip HTML tags to keep database clean)\nlet cleanStatus = actionStatus.replace(/<[^>]*>?/gm, '');\nlet cleanRemark = remark.replace(/<[^>]*>?/gm, ''); // 🌟 Clean the remark too\n\nconst firebaseEntry = {\n    \"Time\": currentTime,\n    \"Device\": deviceName,\n    \"Status\": cleanStatus,\n    \"Remark\": cleanRemark\n};\n\n// Output 1 (msg1) goes to UI Table, Output 2 (msg2) goes to Firebase\nlet msg1 = { payload: JSON.parse(JSON.stringify(eventHistory)) };\nlet msg2 = { payload: firebaseEntry };\n\nreturn [msg1, msg2];",
+        "func": "// 1. Setup Time and Local Variables\nconst timeSettings = { timeZone: 'Asia/Kuala_Lumpur', hour12: false, hour: '2-digit', minute: '2-digit', second: '2-digit' };\nconst currentTime = new Date().toLocaleTimeString(\"en-GB\", timeSettings);\nconst currentTimestamp = Date.now();\nlet payloadStr = msg.payload.toString().trim().toLowerCase();\n\nlet logData = null;\n\n// 2. LOGIC: Parking Stay Duration\nif (msg.topic && msg.topic.includes(\"parking/slot/\")) {\n    let slotNum = msg.topic.split('/').pop();\n\n    if (payloadStr === \"occupied\" || payloadStr === \"1\") {\n        flow.set(\"slot\" + slotNum + \"_arrivalTime\", currentTime);\n        flow.set(\"slot\" + slotNum + \"_startTS\", currentTimestamp);\n        node.status({ fill: \"blue\", shape: \"dot\", text: \"Slot \" + slotNum + \" Occupied\" });\n        return null;\n    }\n    else if (payloadStr === \"empty\" || payloadStr === \"0\") {\n        let startTime = flow.get(\"slot\" + slotNum + \"_arrivalTime\");\n        let startTS = flow.get(\"slot\" + slotNum + \"_startTS\");\n\n        let remarkText = \"\";\n\n        if (startTime && startTS) {\n            let durationMs = currentTimestamp - startTS;\n            let mins = Math.floor(durationMs / 60000);\n            let secs = Math.floor((durationMs % 60000) / 1000);\n            remarkText = \"Stayed: \" + mins + \"m \" + secs + \"s\";\n        } else {\n            remarkText = \"<span style='color: #f39c12;'>Time lost (System Deploy)</span>\";\n        }\n\n        // ★ NEW: Assign a specific color to each slot! ★\n        let slotColor = \"#333333\"; // Default dark grey\n        if (slotNum === \"1\") slotColor = \"#3498db\"; // Blue\n        else if (slotNum === \"2\") slotColor = \"#9b59b6\"; // Purple\n        else if (slotNum === \"3\") slotColor = \"#e67e22\"; // Orange\n\n        // Generate data WITH HTML styling for the Location\n        logData = {\n            \"Time\": currentTime,\n            \"Location\": \"<span style='color: \" + slotColor + \"; font-weight: bold;'>Slot \" + slotNum + \"</span>\",\n            \"Status\": \"<span style='color: #27ae60; font-weight: bold;'>COMPLETED</span>\",\n            \"Remark\": remarkText\n        };\n\n        flow.set(\"slot\" + slotNum + \"_arrivalTime\", null);\n        flow.set(\"slot\" + slotNum + \"_startTS\", null);\n        node.status({ fill: \"green\", shape: \"ring\", text: \"Parking session logged\" });\n    }\n}\n\n// 3. LOGIC: Fire and Panic Alarms\nelse if (msg.topic && msg.topic.includes(\"alarm/status\")) {\n    if (payloadStr === \"smoke\" || payloadStr === \"panic\") {\n\n        let alertColor = payloadStr === \"smoke\" ? \"#e74c3c\" : \"#8e44ad\";\n        let icon = payloadStr === \"smoke\" ? \"🔥\" : \"⚠️\";\n\n        // Generate data WITH HTML styling\n        logData = {\n            \"Time\": currentTime,\n            \"Location\": \"<span style='color: #c0392b; font-weight: bold;'>🚨 Emergency System</span>\",\n            \"Status\": \"<span style='color: \" + alertColor + \"; font-weight: bold;'>\" + payloadStr.toUpperCase() + \" ALERT</span>\",\n            \"Remark\": icon + \" \" + (payloadStr === \"smoke\" ? \"Fire detected in lot!\" : \"Manual panic button pressed!\")\n        };\n\n        node.status({ fill: \"red\", shape: \"dot\", text: \"Alarm Logged\" });\n    }\n}\n\n// 4. SEND DATA \nif (logData !== null) {\n\n    let history = flow.get(\"dashboardTableHistory\") || [];\n    history.unshift(logData);\n\n    if (history.length > 15) {\n        history.pop();\n    }\n\n    flow.set(\"dashboardTableHistory\", history);\n\n    // ★ 核心终极修复：深度克隆 (Deep Clone) ★\n    // 这行代码会把数据彻底粉碎并重新生成一个全新的包裹。\n    // Node-RED 会认为这是 100% 毫无关联的新数据，从而立刻、瞬间推送到你的屏幕上！\n    let clonedHistory = JSON.parse(JSON.stringify(history));\n\n    let msgTable = { payload: clonedHistory };\n    let msgFirebase = { payload: logData };\n\n    return [msgTable, msgFirebase];\n}\n\nreturn null;",
         "outputs": 2,
         "timeout": "",
-        "noerr": 1,
+        "noerr": 3,
         "initialize": "",
         "finalize": "",
         "libs": [],
         "x": 1510,
-        "y": 700,
+        "y": 720,
         "wires": [
             [
                 "db0f3fb1899b9288"
@@ -1487,7 +1769,7 @@
         "name": "To_Firebase_ActivityLog",
         "mode": "link",
         "links": [
-            "124fb20a780c7223"
+            "b52ffc079c3de207"
         ],
         "x": 1655,
         "y": 800,
@@ -1508,24 +1790,24 @@
                 "title": "Time",
                 "width": "20%",
                 "align": "left",
-                "formatter": "plaintext",
+                "formatter": "html",
                 "formatterParams": {
                     "target": "_blank"
                 }
             },
             {
-                "field": "Device",
-                "title": "Device",
+                "field": "Location",
+                "title": "Source",
                 "width": "30%",
                 "align": "left",
-                "formatter": "plaintext",
+                "formatter": "html",
                 "formatterParams": {
                     "target": "_blank"
                 }
             },
             {
                 "field": "Status",
-                "title": "Status",
+                "title": "Event Type",
                 "width": "25%",
                 "align": "left",
                 "formatter": "html",
@@ -1535,7 +1817,7 @@
             },
             {
                 "field": "Remark",
-                "title": "Remark",
+                "title": "Details",
                 "width": "25%",
                 "align": "left",
                 "formatter": "html",
@@ -1546,7 +1828,7 @@
         ],
         "outputs": 0,
         "cts": false,
-        "x": 1745,
+        "x": 1750,
         "y": 700,
         "wires": []
     },
@@ -1589,8 +1871,8 @@
         "type": "ui_chart",
         "z": "40dbd4eefce72e0e",
         "name": "",
-        "group": "b3bf710b67ec3bc9",
-        "order": 3,
+        "group": "f19da899c53473ee",
+        "order": 2,
         "width": 6,
         "height": 5,
         "label": "Smoke Trend (Past 5 Mins)",
@@ -1622,7 +1904,7 @@
         "outputs": 1,
         "useDifferentColor": false,
         "className": "",
-        "x": 1660,
+        "x": 1820,
         "y": 300,
         "wires": [
             []
@@ -1661,7 +1943,7 @@
         "type": "ui_gauge",
         "z": "40dbd4eefce72e0e",
         "name": "",
-        "group": "f19da899c53473ee",
+        "group": "b3bf710b67ec3bc9",
         "order": 1,
         "width": 7,
         "height": 4,
@@ -1689,7 +1971,7 @@
         "type": "ui_gauge",
         "z": "40dbd4eefce72e0e",
         "name": "",
-        "group": "6f546be7135824c6",
+        "group": "b9528c6b547cb537",
         "order": 4,
         "width": 12,
         "height": 6,
@@ -1708,7 +1990,7 @@
         "seg2": "",
         "diff": false,
         "className": "",
-        "x": 1110,
+        "x": 1220,
         "y": 500,
         "wires": []
     },
@@ -1716,9 +1998,9 @@
         "id": "d6eccaa7393dcf93",
         "type": "ui_template",
         "z": "40dbd4eefce72e0e",
-        "group": "b3bf710b67ec3bc9",
+        "group": "f19da899c53473ee",
         "name": "",
-        "order": 2,
+        "order": 3,
         "width": 6,
         "height": 2,
         "format": "<div ng-style=\"{'background-color': msg.color}\"\n    style=\"width: 100%; height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 8px; color: white; font-family: 'Arial Black', sans-serif; overflow: hidden; margin: 0; padding: 5px;\">\n\n    <i class=\"{{msg.icon}}\" style=\"font-size: 24px; margin-bottom: 4px;\"></i>\n    <div style=\"font-size: 16px; font-weight: bold; text-align: center; line-height: 1.1;\">\n        {{msg.text}}\n    </div>\n</div>",
@@ -1737,18 +2019,18 @@
         "id": "32f4d339c48ff787",
         "type": "ui_template",
         "z": "40dbd4eefce72e0e",
-        "group": "6f546be7135824c6",
+        "group": "b9528c6b547cb537",
         "name": "Slot 3",
         "order": 3,
         "width": 4,
         "height": 5,
-        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 3</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
+        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 3</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1180,
+        "x": 1330,
         "y": 380,
         "wires": [
             []
@@ -1758,18 +2040,18 @@
         "id": "52a111f64663c033",
         "type": "ui_template",
         "z": "40dbd4eefce72e0e",
-        "group": "6f546be7135824c6",
+        "group": "b9528c6b547cb537",
         "name": "Slot 2",
         "order": 2,
         "width": 4,
         "height": 5,
-        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 2</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.statusText}}</div>\n\n</div>",
+        "format": "<div ng-style=\"{'background-color': msg.color}\" style=\"width: 100%; height: 100%; color: white; display: flex; \n            flex-direction: column; align-items: center; justify-content: center; \n            border-radius: 15px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); \n            box-sizing: border-box; padding: 10px;\">\n\n    <div style=\"font-size: 16px; opacity: 0.9;\">SLOT 2</div>\n    <div style=\"font-size: 28px; font-weight: bold; margin-top: 15px;\">{{msg.text}}</div>\n\n</div>",
         "storeOutMessages": true,
         "fwdInMessages": true,
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1160,
+        "x": 1350,
         "y": 260,
         "wires": [
             []
@@ -1779,7 +2061,7 @@
         "id": "b785169ad87aab17",
         "type": "ui_template",
         "z": "40dbd4eefce72e0e",
-        "group": "6f546be7135824c6",
+        "group": "b9528c6b547cb537",
         "name": "Slot 1",
         "order": 1,
         "width": 4,
@@ -1790,7 +2072,7 @@
         "resendOnRefresh": true,
         "templateScope": "local",
         "className": "",
-        "x": 1160,
+        "x": 1370,
         "y": 160,
         "wires": [
             []
@@ -1842,5 +2124,130 @@
         "x": 755,
         "y": 260,
         "wires": []
+    },
+    {
+        "id": "17a6707716c50d51",
+        "type": "delay",
+        "z": "40dbd4eefce72e0e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1200,
+        "y": 160,
+        "wires": [
+            [
+                "b785169ad87aab17"
+            ]
+        ]
+    },
+    {
+        "id": "2282629ede66ca5e",
+        "type": "delay",
+        "z": "40dbd4eefce72e0e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1200,
+        "y": 260,
+        "wires": [
+            [
+                "52a111f64663c033"
+            ]
+        ]
+    },
+    {
+        "id": "6e5e31c65de2bf0c",
+        "type": "delay",
+        "z": "40dbd4eefce72e0e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1180,
+        "y": 380,
+        "wires": [
+            [
+                "32f4d339c48ff787"
+            ]
+        ]
+    },
+    {
+        "id": "3c20934948d18a58",
+        "type": "delay",
+        "z": "40dbd4eefce72e0e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1020,
+        "y": 500,
+        "wires": [
+            [
+                "14e6abdb5293f8d5"
+            ]
+        ]
+    },
+    {
+        "id": "34f966f242f44856",
+        "type": "delay",
+        "z": "40dbd4eefce72e0e",
+        "name": "",
+        "pauseType": "rate",
+        "timeout": "2",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "2",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": true,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 1600,
+        "y": 300,
+        "wires": [
+            [
+                "16178e2c5a870a49"
+            ]
+        ]
     }
 ]
